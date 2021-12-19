@@ -1,0 +1,62 @@
+body,html {
+    background: rgb(99, 39, 120)
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+.logout {
+    background-color: darkred;
+}
+.beautiful-img {
+    opacity: 1;
+}
+.hidden {
+    display: none;
+}
+.beautiful-img:hover {
+    opacity: 0.3;
+    cursor: pointer;
+}
+.main-edit {
+    margin-bottom: 20px;
+}
+.form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8
+}
+.btn-pass {
+    margin-top: 10px;
+}
+.profile-button {
+    background: rgb(99, 39, 120);
+    box-shadow: none;
+    border: none
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.profile-button:hover {
+    background: #682773
+}
+
+.profile-button:focus {
+    background: #682773;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #682773;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #682773;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+.rounded-4 { border-radius: .5rem; }
+.rounded-5 { border-radius: .75rem; }
