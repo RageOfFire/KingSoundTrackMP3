@@ -22,6 +22,7 @@
             <th></th>
             <th>Tên</th>
             <th>Thể loại</th>
+            <th>Tác giả</th>
             <th>Được thêm vào</th>
             <th colspan="2" class="text-center">Cài đặt</th>
           </tr>
@@ -49,6 +50,7 @@
               <td class="bg-success"><img class="img-thumnail" onError="this.onerror=null;this.src=`./assets/img/vector60-1116-01.jpg`;" src="./Profile Storage/'.$profile.'/img/'.$row['picture'].'" alt="Music Thumnail" width="40px" height="40px"></td>
               <td class="bg-success">'.$row['title'].'</td>
               <td class="bg-success">'.$row['gender'].'</td>
+              <td class="bg-success">'.$row['author'].'</td>
               <td class="bg-success">'.$row['create_at'].'</td>
               <td class="bg-dark"><a href="./editmusicpage.php?title='.$title.'"><button class="btn btn-success"><i class="fas fa-edit"></i></button></a></td>
               <td class="bg-dark"><a onClick="javascript: return confirm(`Xác nhận xóa bài hát '.$title.' ?`);" href="./assets/PHP/deletemusic.php?account='.$profile.'&title='.$title.'"><button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button></a></td>

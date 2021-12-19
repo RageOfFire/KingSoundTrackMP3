@@ -30,7 +30,7 @@
       </thead>
       <tbody>
         <?php
-        $profile = $_SESSION['ProRG'];
+        $profile = $_SESSION['proRG'];
         $sql_searchprofileid = "SELECT profile_id FROM profile WHERE account = '$profile'";
         $searchprofileid = $conn->query($sql_searchprofileid) or die($conn->error);
         while ($row = $searchprofileid->fetch_assoc()) {

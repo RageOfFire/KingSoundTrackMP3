@@ -22,6 +22,7 @@
             <th>Tên</th>
             <th>Thể loại</th>
             <th>Được thêm bởi</th>
+            <th>Tác giả</th>
             <th>Được thêm vào</th>
             <th>Tên file</th>
             <th>Mô tả</th>
@@ -51,6 +52,7 @@
               <td class="bg-success">'.$row['title'].'</td>
               <td class="bg-success">'.$row['gender'].'</td>
               <td class="bg-success">'.$row['create_by'].'</td>
+              <td class="bg-success">'.$row['author'].'</td>
               <td class="bg-success">'.$row['create_at'].'</td>
               <td class="bg-success">'.$row['soundfile'].'</td>
               <td class="bg-success">'.$row['description'].'</td>

@@ -12,7 +12,7 @@
 <body>
 <?php include './assets/include/header.php'; ?>
 <main>
-    <h1 class="text-center">Chào mừng Admin: <span class="text-warning"><?php echo $profile?></span> Đã trở lại</h1>
+    <h1 class="text-center">Chào mừng Admin: <span class="text-warning"><?php echo $profile;?></span> Đã trở lại</h1>
 </main>
 <?php include './assets/include/footer.php'; ?>
 <script src="./assets/javascript/TriggerEnterKey.js"></script>

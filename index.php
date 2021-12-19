@@ -75,6 +75,7 @@
                 <li class="list-group-item list-group-item-warning"><a href="?list='.$row['list'].'#Music_choosen"><img src="./Profile Storage/'.$row['create_by'].'/img/'.$row['picture'].'" onError="this.onerror=null;this.src=`./assets/img/vector60-1116-01.jpg`;" alt="Music image" class="music-img"></a></li>
                 <li class="list-group-item list-group-item-warning">Tên: '.$row['title'].'</li>
                 <li class="list-group-item list-group-item-warning">Thể loại: '.$row['gender'].'</li>
+                <li class="list-group-item list-group-item-warning">Tác giả: '.$row['author'].'</li>
                 <li class="list-group-item list-group-item-warning">Được thêm bởi: '.$row['create_by'].'</li>
                 <li class="list-group-item list-group-item-warning">Mô tả: '.$row['description'].'</li>
               </ul>
@@ -179,19 +180,7 @@
         <h2 class="fw-bold mb-0" style="color: black;">Đăng ký</h2>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-
       <div class="modal-body p-5 pt-0">
-      <?php
-          if (isset($_SESSION['error'])) {
-          echo '
-          <div class="alert alert-danger" role="alert">
-          '.$_SESSION['error'].'
-          </div>
-          ';
-          unset($_SESSION['error']);
-          }
-          else {}
-          ?>
         <form action="./assets/PHP/sign-up.php" method="post" enctype="multipart/form-data">
           <div class="form-floating mb-3">
             <input type="email" class="form-control rounded-4" name="emailRG" id="floatingInput" placeholder="Email..." required>
