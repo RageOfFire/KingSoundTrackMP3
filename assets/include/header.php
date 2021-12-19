@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!-- Phần đầu -->
 <header class="p-3 bg-dark text-white">
     <div class="container">
