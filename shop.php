@@ -5,21 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./assets/font/fontawesome-free-5.15.4-web/css/all.css"/>
+    <?php include './assets/include/framework.php'; ?>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-      <symbol id="facebook" viewBox="0 0 16 16">
-        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-      </symbol>
-    </svg>
 </head>
 <body>
-<?php include './header.php'; ?>
+<?php include './assets/include/header.php'; ?>
     <!-- Phần thân -->
     <main>
-    <?php include './check.php' ?>
+    <?php include './assets/include/check.php'; ?>
     <div id="background" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#background" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -121,8 +114,7 @@
             </div>
     </main>
     <!-- Kết thúc phần thân -->
-<?php include './footer.php'; ?>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-      <script src="assets/javascript/TriggerEnterKey.js"></script>
+<?php include './assets/include/footer.php'; ?>
+    <script src="assets/javascript/TriggerEnterKey.js"></script>
 </body>
 </html>
