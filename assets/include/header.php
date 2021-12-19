@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!-- Phần đầu -->
 <header class="p-3 bg-dark text-white">
     <div class="container">
@@ -6,7 +7,6 @@
                 <li><a href="./" class="nav-link px-2 text-white">Trang chủ</a></li>
                 <li>
                 <?php
-                session_start();
                 if(isset($_SESSION['proRG'])) {
                 $profile = $_SESSION['proRG'];
                     echo '<a href="./uploadmain.php" class="nav-link px-2 text-white">Đăng</a>';
