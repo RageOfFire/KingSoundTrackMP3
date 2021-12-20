@@ -67,11 +67,10 @@
               $sql_getmusic6 = "SELECT * FROM music LIMIT $start_at,$number_of_item";
               $getmusic6 = $conn->query($sql_getmusic6) or die($conn->error);
               while ($row = $getmusic6->fetch_assoc()) {
-
                 echo 
                 '<div class="music-item text-center">
                 <ul class="list-group m-5">
-                <li class="list-group-item list-group-item-warning"><a href="?list='.$row['list'].'#Music_choosen"><img src="./Profile Storage/'.$row['create_by'].'/img/'.$row['picture'].'" onError="this.onerror=null;this.src=`./assets/img/vector60-1116-01.jpg`;" alt="Music image" class="music-img"></a></li>
+                <li class="list-group-item list-group-item-warning"><a href="?list='.$row['list'].'#Music_choosen"><img src="./Profile Storage/'.$row['create_by'].'/img/'.$row['picture'].'" onError="this.onerror=null;this.src=`./assets/img/vector60-1116-01.jpg`;" alt="Music image" class="music-img img-fluid"></a></li>
                 <li class="list-group-item list-group-item-warning">Tên: '.$row['title'].'</li>
                 <li class="list-group-item list-group-item-warning">Thể loại: '.$row['gender'].'</li>
                 <li class="list-group-item list-group-item-warning">Tác giả: '.$row['author'].'</li>

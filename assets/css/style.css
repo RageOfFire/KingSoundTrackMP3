@@ -31,8 +31,13 @@ body {
   overflow: hidden;
 }
 .music-item {
-  float: left;
-  width: calc(100%/3);
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .music-item {
+    float: left;
+    width: calc(100%/3);
+}
 }
 .music-img {
   opacity: 1;
