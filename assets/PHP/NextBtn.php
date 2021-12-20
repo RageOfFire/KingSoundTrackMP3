@@ -1,5 +1,5 @@
 <?php
-include_once "./connect.php";
+include_once "../include/connect.php";
 $message = "";
 $list_button = $_GET['list'];
 $sql_list = "SELECT list FROM music";

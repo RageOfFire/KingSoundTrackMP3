@@ -15,7 +15,7 @@
   <main>
   <?php include './assets/include/check.php'; ?>
     <?php
-    include_once './assets/PHP/connect.php';
+    include_once "./assets/include/connect.php";
     $title = $_REQUEST['title'];
     $sql_getmusicinfo = "SELECT * FROM music WHERE title = '$title'";
     $getmusicinfo = $conn->query($sql_getmusicinfo) or die($conn->error);

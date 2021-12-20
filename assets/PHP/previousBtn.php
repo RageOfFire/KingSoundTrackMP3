@@ -1,6 +1,5 @@
 <?php
-include_once "./connect.php";
-$message = "";
+include_once "../include/connect.php";
 $list_button = $_GET['list'];
 $sql_list = "SELECT list FROM music";
 $list = $conn->query($sql_list) or die($conn->error);

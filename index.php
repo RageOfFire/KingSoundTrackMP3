@@ -56,7 +56,7 @@
             <hr>
             <div class="musiclist">
               <?php
-              include_once "./assets/PHP/connect.php";
+              include_once "./assets/include/connect.php";
               if (isset($_GET['page'])) {
                 $page = $_GET['page'];
               }

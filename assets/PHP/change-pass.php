@@ -1,5 +1,5 @@
 <?php
-include_once "./connect.php";
+include_once "../include/connect.php";
 $account = $_POST['account'];
 $oldpass = $_POST['oldpassRG'];
 $newpass = $_POST['newpassRG'];

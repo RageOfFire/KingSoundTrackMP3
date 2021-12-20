@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "./connect.php";
+include_once "../include/connect.php";
 if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
 }

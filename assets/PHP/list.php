@@ -4,7 +4,7 @@
 sẽ cập nhật lại thứ tự cột 'list' trong bảng music dùng trong việc chuyển
 tiếp/quay lại nhạc dễ dành hơn
 */
-include_once "./connect.php";
+include_once "../include/connect.php";
 $account=$_GET['profile'];
 // Reset lại list 
 $sql_reset = "SET @autolist :=0;";

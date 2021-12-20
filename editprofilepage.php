@@ -13,7 +13,7 @@
 <body>
 <?php include './assets/include/header.php'; ?>
   <?php
-  include_once "./assets/PHP/connect.php";
+  include_once "./assets/include/connect.php";
   $get_profile = $_SESSION['proRG'];
   $sql_edit = "SELECT * FROM profile WHERE account = '$get_profile'";
   $result_profile = $conn->query($sql_edit) or die($conn->error);

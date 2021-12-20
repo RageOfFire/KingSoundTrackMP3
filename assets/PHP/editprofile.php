@@ -1,5 +1,5 @@
 <?php
-include_once "./connect.php";
+include_once "../include/connect.php";
 $account = $_POST['proRG'];
 $name = $_POST['nameRG'];
 $gender = $_POST['genderRG'];

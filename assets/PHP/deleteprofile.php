@@ -1,5 +1,5 @@
 <?php
-    include_once('./connect.php');
+include_once "../include/connect.php";
     $account=$_REQUEST['account'];
     $path = "../../Profile Storage/$account";
 // Xóa tất cả folder và folder phụ khi xóa tài khoản người dùng

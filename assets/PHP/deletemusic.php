@@ -1,5 +1,5 @@
 <?php
-    include_once('./connect.php');
+include_once "../include/connect.php";
     $account=$_REQUEST['account'];
     $title = $_REQUEST['title'];
     $pic_path = "../../Profile Storage/$account/img/";

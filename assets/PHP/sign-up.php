@@ -1,5 +1,5 @@
 <?php
-    include_once './connect.php';
+include_once "../include/connect.php";
     $account=$_POST['proRG'];
     $email=$_POST['emailRG'];
     $pass=$_POST['passRG'];

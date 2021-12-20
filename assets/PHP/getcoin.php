@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "./connect.php";
+include_once "../include/connect.php";
 $profile = $_SESSION['proRG'];
 $coin = 0;
 // Lấy profile_id

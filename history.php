@@ -30,6 +30,7 @@
       </thead>
       <tbody>
         <?php
+        include_once "./assets/include/connect.php";
         $profile = $_SESSION['proRG'];
         $sql_searchprofileid = "SELECT profile_id FROM profile WHERE account = '$profile'";
         $searchprofileid = $conn->query($sql_searchprofileid) or die($conn->error);

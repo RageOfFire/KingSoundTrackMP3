@@ -44,7 +44,7 @@
                             <select class="form-select" name="mp3genderRG" required>
                             <option selected hidden>Chọn thể loại nhạc</option>
                             <?php
-                            include_once "./assets/PHP/connect.php";
+                            include_once "./assets/include/connect.php";
                             $sql_gender="SELECT gender FROM gender ORDER BY gender";
                             $result=$conn->query($sql_gender) or die("$conn->error");
                             while($row=$result->fetch_assoc())

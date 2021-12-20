@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "./connect.php";
+include_once "../include/connect.php";
 $filestatus = 0;
 $profile = $_SESSION['proRG'];
 $mp3title = $_POST['mp3titleRG'];

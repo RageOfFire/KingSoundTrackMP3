@@ -1,7 +1,6 @@
 <?php
 session_start();
-$message ="";
-include_once "./connect.php";
+include_once "../include/connect.php";
 $get_profile = "SELECT * FROM profile WHERE (account='".$_POST['proRG']."' OR email='".$_POST['proRG']."') AND password='".$_POST['passRG']."'";
 $get_singin = $conn->query($get_profile) or die($conn->error);
 $row = $get_singin->fetch_array();

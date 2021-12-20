@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once './connect.php';
+include_once "../include/connect.php";
 $email = $_POST['emailget'];
 $sql_checkemail = "SELECT * FROM profile WHERE email='$email'";
 $checkemail = $conn->query($sql_checkemail) or die($conn->error);

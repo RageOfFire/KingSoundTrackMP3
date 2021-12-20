@@ -45,7 +45,7 @@
             <div class="musiclist text-center">
               <!-- Class here -->
               <?php
-              include_once './assets/PHP/connect.php';
+              include_once "./assets/include/connect.php";
               if (isset($_GET['page'])) {
                 $page = $_GET['page'];
               }

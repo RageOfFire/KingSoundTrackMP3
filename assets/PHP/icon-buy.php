@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "./connect.php";
+include_once "../include/connect.php";
 $item_shop = $_POST['itemRG'];
 $coin_shop = $_POST['coinRG'];
 $pic_shop = $_POST['itempicRG'];
