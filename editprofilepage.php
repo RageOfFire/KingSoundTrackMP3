@@ -12,8 +12,14 @@
 
 <body>
 <?php include './assets/include/header.php'; ?>
+<?php
+if (isset($_SESSION['proRG'])) {}
+else {
+  $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
+  header("location: ./");
+}
+?>
   <?php
-  include_once "./assets/include/connect.php";
   $get_profile = $_SESSION['proRG'];
   $sql_edit = "SELECT * FROM profile WHERE account = '$get_profile'";
   $result_profile = $conn->query($sql_edit) or die($conn->error);

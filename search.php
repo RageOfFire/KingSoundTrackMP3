@@ -13,6 +13,13 @@
 <?php include './assets/include/header.php'; ?>
 <main>
 <?php include './assets/include/check.php'; ?>
+<?php
+if (isset($_SESSION['proRG'])) {}
+else {
+  $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
+  header("location: ./");
+}
+?>
     <h1 class="text-center">Người dùng</h1>
     <hr>
     <table class="table table-hover table-bordered text-center">
@@ -29,7 +36,6 @@
         </thead>
         <tbody>
             <?php
-            include_once "./assets/include/connect.php";
             if (isset($_GET['page'])) {
               $page = $_GET['page'];
             }

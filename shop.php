@@ -11,6 +11,13 @@
 </head>
 <body>
 <?php include './assets/include/header.php'; ?>
+<?php
+if (isset($_SESSION['proRG'])) {}
+else {
+  $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
+  header("location: ./");
+}
+?>
     <!-- Phần thân -->
     <main>
     <?php include './assets/include/check.php'; ?>
@@ -45,7 +52,6 @@
             <div class="musiclist text-center">
               <!-- Class here -->
               <?php
-              include_once "./assets/include/connect.php";
               if (isset($_GET['page'])) {
                 $page = $_GET['page'];
               }

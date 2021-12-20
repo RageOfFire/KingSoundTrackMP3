@@ -13,6 +13,13 @@
 <body>
 <?php include './assets/include/header.php'; ?>
   <main>
+  <?php
+if (isset($_SESSION['proRG'])) {}
+else {
+  $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
+  header("location: ./");
+}
+?>
   <?php include './assets/include/check.php'; ?>
     <h1 class="text-center">Lịch sử nạp coin</h1>
     <hr>
@@ -30,7 +37,6 @@
       </thead>
       <tbody>
         <?php
-        include_once "./assets/include/connect.php";
         $profile = $_SESSION['proRG'];
         $sql_searchprofileid = "SELECT profile_id FROM profile WHERE account = '$profile'";
         $searchprofileid = $conn->query($sql_searchprofileid) or die($conn->error);

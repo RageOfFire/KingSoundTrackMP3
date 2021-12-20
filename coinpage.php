@@ -13,6 +13,13 @@
 <body>
 <?php include './assets/include/header.php'; ?>
   <main>
+<?php
+if (isset($_SESSION['proRG'])) {}
+else {
+  $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
+  header("location: ./");
+}
+?>
   <?php include './assets/include/check.php'; ?>
       <div class="container rounded bg-white">
         <div class="row">

@@ -11,7 +11,14 @@
 </head>
 <body>
 <?php include './assets/include/header.php'; ?>
-    <main>
+<main>
+<?php
+if (isset($_SESSION['proRG'])) {}
+else {
+  $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
+  header("location: ./");
+}
+?>
 <?php include './assets/include/check.php'; ?>
     <form action="./assets/PHP/addmusic.php" method="post" enctype="multipart/form-data">
     <div class="container rounded bg-white mt-5 mb-5">
@@ -44,7 +51,6 @@
                             <select class="form-select" name="mp3genderRG" required>
                             <option selected hidden>Chọn thể loại nhạc</option>
                             <?php
-                            include_once "./assets/include/connect.php";
                             $sql_gender="SELECT gender FROM gender ORDER BY gender";
                             $result=$conn->query($sql_gender) or die("$conn->error");
                             while($row=$result->fetch_assoc())

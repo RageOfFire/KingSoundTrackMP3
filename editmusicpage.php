@@ -13,9 +13,15 @@
 <body>
 <?php include './assets/include/header.php'; ?>
   <main>
+  <?php
+if (isset($_SESSION['proRG'])) {}
+else {
+  $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
+  header("location: ./");
+}
+?>
   <?php include './assets/include/check.php'; ?>
     <?php
-    include_once "./assets/include/connect.php";
     $title = $_REQUEST['title'];
     $sql_getmusicinfo = "SELECT * FROM music WHERE title = '$title'";
     $getmusicinfo = $conn->query($sql_getmusicinfo) or die($conn->error);

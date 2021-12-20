@@ -28,7 +28,7 @@
                 <li><a href="./about.html" class="nav-link px-2 text-white">Về chúng tôi</a></li>
                 <li>
                 <?php
-                include_once './assets/PHP/connect.php';
+                include_once './assets/include/connect.php';
                 if(isset($_SESSION['proRG'])) {
                 $sql_checkadmin = "SELECT IsAdmin FROM profile WHERE account = '$profile'";
                 $checkadmin = $conn->query($sql_checkadmin) or die($conn->error);
