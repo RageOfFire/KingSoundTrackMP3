@@ -98,18 +98,18 @@ else {
             if ($page>1) {
               echo '
               <li class="page-item">
-              <a class="page-link" href="./shop.php?profile='.$profile.'&page='.($page-1).'#Shop-list" aria-label="Previous">
+              <a class="page-link" href="./shop.php?page='.($page-1).'#Shop-list" aria-label="Previous">
               <span aria-hidden="true"><i class="fas fa-arrow-circle-left"></i></span>
               </a>
               </li>
               ';
             }
             for ($i = 1; $i < $total_pages; $i++) {
-              echo '<li class="page-item"><a class="page-link" href="./shop.php?profile='.$profile.'&page='.$i.'#Shop-list">'.$i.'</a></li>';
+              echo '<li class="page-item"><a class="page-link" href="./shop.php?page='.$i.'#Shop-list">'.$i.'</a></li>';
             }
             if($i>$page) {
               echo '
-              <a class="page-link" href="./shop.php?profile='.$profile.'&page='.($page+1).'#Shop-list" aria-label="Next">
+              <a class="page-link" href="./shop.php?page='.($page+1).'#Shop-list" aria-label="Next">
               <span aria-hidden="true"><i class="fas fa-arrow-circle-right"></i></span>
               </a>
               </li>

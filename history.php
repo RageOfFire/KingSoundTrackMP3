@@ -87,18 +87,18 @@ else {
         if ($page > 1) {
           echo '
               <li class="page-item">
-              <a class="page-link" href="./history.php?profile=' . $profile . '&page=' . ($page - 1) . '&item_page=' . $item_page . '" aria-label="Previous">
+              <a class="page-link" href="./history.php?page=' . ($page - 1) . '&item_page=' . $item_page . '" aria-label="Previous">
               <span aria-hidden="true"><i class="fas fa-arrow-circle-left"></i></span>
               </a>
               </li>
               ';
         }
         for ($i = 1; $i < $total_pages; $i++) {
-          echo '<li class="page-item"><a class="page-link" href="./history.php?profile=' . $profile . '&page=' . $i . '&item_page=' . $item_page . '">' . $i . '</a></li>';
+          echo '<li class="page-item"><a class="page-link" href="./history.php?page=' . $i . '&item_page=' . $item_page . '">' . $i . '</a></li>';
         }
         if ($i > $page) {
           echo '
-              <a class="page-link" href="./history.php?profile=' . $profile . '&page=' . ($page + 1) . '&item_page=' . $item_page . '" aria-label="Next">
+              <a class="page-link" href="./history.php?page=' . ($page + 1) . '&item_page=' . $item_page . '" aria-label="Next">
               <span aria-hidden="true"><i class="fas fa-arrow-circle-right"></i></span>
               </a>
               </li>
@@ -152,18 +152,18 @@ else {
         if ($item_page > 1) {
           echo '
               <li class="page-item">
-              <a class="page-link" href="./history.php?profile=' . $profile . '&page=' . $page . '&item_page=' . ($item_page - 1) . '" aria-label="Previous">
+              <a class="page-link" href="./history.php?page=' . $page . '&item_page=' . ($item_page - 1) . '" aria-label="Previous">
               <span aria-hidden="true"><i class="fas fa-arrow-circle-left"></i></span>
               </a>
               </li>
               ';
         }
         for ($u = 1; $u < $total_pages_item; $u++) {
-          echo '<li class="page-item"><a class="page-link" href="./history.php?profile=' . $profile . '&page=' . $page . '&item_page=' . $u . '">' . $u . '</a></li>';
+          echo '<li class="page-item"><a class="page-link" href="./history.php?page=' . $page . '&item_page=' . $u . '">' . $u . '</a></li>';
         }
         if ($u > $item_page) {
           echo '
-              <a class="page-link" href="./history.php?profile=' . $profile . '&page=' . $page . '&item_page=' . ($item_page + 1) . '" aria-label="Next">
+              <a class="page-link" href="./history.php?page=' . $page . '&item_page=' . ($item_page + 1) . '" aria-label="Next">
               <span aria-hidden="true"><i class="fas fa-arrow-circle-right"></i></span>
               </a>
               </li>
