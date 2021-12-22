@@ -12,5 +12,5 @@ Website này có những chức năng sau:
 - Minigame giải đố
 - ...
 Hướng dẫn cách sử dụng:
-Tải xampp về và xuất file database/kingsoundtrackmp3.sql và phpmyadmin
+Tải xampp về và xuất file database/kingsoundtrackmp3.sql vào phpmyadmin
 Sau đó mở file index.php để bắt đầu sử dụng
