@@ -43,7 +43,7 @@ else {
               <h4 class="p-3 mb-2 mt-2 bg-info text-light rounded text-center">Ảnh</h4>
               <input type="file" class="hidden" id="updateIMG" accept="image/*" name="mp3pictureRG" onchange="getnameimg()">
               <label class="input-group-text" for="updateIMG">
-                <img class="beautiful-img" id="IMGshow" src="<?php echo './Profile Storage/' . $mp3createby . '/img/' . $mp3pic; ?>" onError="this.onerror=null;this.src=`./assets/img/vector60-1116-01.jpg`;" width="280px" height="250px">
+                <img class="beautiful-img img-fluid" id="IMGshow" src="<?php echo './Profile Storage/' . $mp3createby . '/img/' . $mp3pic; ?>" onError="this.onerror=null;this.src=`./assets/img/vector60-1116-01.jpg`;" width="280px" height="250px">
               </label>
             </div>
           </div>
@@ -84,5 +84,4 @@ else {
 <?php include './assets/include/footer.php'; ?>
   <script src="./assets/javascript/showimg.js"></script>
 </body>
-
 </html>

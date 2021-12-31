@@ -171,6 +171,5 @@ else {
       <hr>
     </main>
     <?php include './assets/include/footer.php'; ?>
-    <script src="./assets/javascript/TriggerEnterKey.js"></script>
 </body>
 </html>

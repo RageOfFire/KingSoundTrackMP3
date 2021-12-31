@@ -122,6 +122,5 @@ else {
     </main>
     <!-- Kết thúc phần thân -->
 <?php include './assets/include/footer.php'; ?>
-    <script src="assets/javascript/TriggerEnterKey.js"></script>
 </body>
 </html>

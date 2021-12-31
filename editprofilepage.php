@@ -43,7 +43,7 @@ else {
               <h4 class="p-3 mb-2 mt-2 bg-info text-light rounded text-center">Ảnh đại diện</h4>
               <input type="file" class="hidden" id="updateIMG" accept="image/*" name="pictureRG" onchange="getnameimg()">
               <label class="input-group-text" for="updateIMG">
-                <img class="beautiful-img" id="IMGshow" src="./Profile Storage/<?php echo $account; ?>/img/<?php echo $getPIC; ?>" onError="this.onerror=null;this.src='./assets/img/User-Profile-PNG-Clipart.png';" width="280px" height="250px">
+                <img class="beautiful-img img-fluid" id="IMGshow" src="./Profile Storage/<?php echo $account; ?>/img/<?php echo $getPIC; ?>" onError="this.onerror=null;this.src='./assets/img/User-Profile-PNG-Clipart.png';" width="280px" height="250px">
               </label>
             </div>
             <hr>

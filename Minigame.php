@@ -79,5 +79,4 @@ else {
   </main>
   <?php include './assets/include/footer.php'; ?>
 </body>
-
 </html>

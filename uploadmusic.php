@@ -29,12 +29,12 @@ else {
                     <p id="filename"></p>
                     <input type="file" class="hidden" id="updateFile" accept=".mp3" name="mp3fileRG" onchange="getnamefile()" required>
                     <label class="input-group-text" for="updateFile">
-                      <div class="beautiful-img" style="width: 300px; height: 100px;"><i class="fas fa-upload" style="font-size: 80px; margin: 10px;"></i></div>
+                      <div style="width: 300px; height: 100px;"><i class="fas fa-upload" style="font-size: 80px; margin: 10px;"></i></div>
                     </label>
                 <h4 class="p-3 mb-2 mt-2 bg-info text-light rounded">Ảnh</h4>
                     <input type="file" class="hidden" id="updateIMG" accept="image/*" name="mp3pictureRG" onchange="getnameimg()">
                     <label class="input-group-text" for="updateIMG">
-                      <img class="beautiful-img" id="IMGshow" src="<?php echo './Profile Storage/'.$mp3createby.'/img/'.$mp3pic;?>" onError="this.onerror=null;this.src=`./assets/img/vector60-1116-01.jpg`;" width="280px" height="250px">
+                      <img class="beautiful-img img-fluid" id="IMGshow" src="<?php echo './Profile Storage/'.$mp3createby.'/img/'.$mp3pic;?>" onError="this.onerror=null;this.src=`./assets/img/vector60-1116-01.jpg`;" width="280px" height="250px">
                     </label>
                   </div>
             </div>
