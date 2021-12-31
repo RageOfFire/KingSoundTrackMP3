@@ -12,13 +12,6 @@
 <body class="text-center">
 <main class="form-signin">
 <?php include './assets/include/check.php'; ?>
-<?php
-if (isset($_SESSION['proRG'])) {}
-else {
-  $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
-  header("location: ./");
-}
-?>
   <form method="post" action="./assets/PHP/email-forgot-pass.php" enctype="multipart/form-data">
     <i class="fas fa-unlock-alt icon-recovery"></i>
     <h1 class="h3 mb-3 fw-normal">Nhập email tài khoản cần lấy lại mật khẩu</h1>
