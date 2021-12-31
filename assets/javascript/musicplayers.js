@@ -32,17 +32,6 @@ const playerButton = document.querySelector('#playBtn');
         playerButton.innerHTML = playIcon;
       }
       audio.onended = audioEnded;
-// Thực hiện chuyển bài hát
-Musiclist = document.getElementsByClassName('music-item').length;
-NextButton = document.querySelector('#nextBtn');
-PreviousButton = document.querySelector('#previousBtn');
-// Lùi lại
-function PrevMusic () {
-  Musiclist--;
-  if (Musiclist < 0) {
-    Musiclist - 1;
-  }
-}
 // Hiện thời gian
 audio.addEventListener('timeupdate',function(){
     const currentTime = audio.currentTime;
