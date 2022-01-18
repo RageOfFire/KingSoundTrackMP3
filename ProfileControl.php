@@ -14,7 +14,7 @@
 <main>
 <?php include './assets/include/check.php'; ?>
 <?php
-if (isset(mysqli_real_escape_string($conn,$_SESSION['proRG']))) {
+if (isset($_SESSION['proRG'])) {
   $sql_admin = "SELECT IsAdmin FROM profile WHERE account = '$profile'";
   $admin = $conn->query($sql_admin) or die($conn->error);
   while ($row = $admin->fetch_assoc()) {

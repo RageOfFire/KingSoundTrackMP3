@@ -14,7 +14,7 @@
 <main>
 <?php include './assets/include/check.php'; ?>
 <?php
-if (isset(mysqli_real_escape_string($conn,$_SESSION['proRG']))) {}
+if (isset($_SESSION['proRG'])) {}
 else {
   $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
   header("location: ./");

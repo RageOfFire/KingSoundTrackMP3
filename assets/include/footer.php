@@ -4,7 +4,7 @@
     <li class="nav-item"><a href="./" class="nav-link px-2 text-warning">Trang chủ</a></li>
     <li class="nav-item"> 
 <?php
-  if(isset(mysqli_real_escape_string($conn,$_SESSION['proRG']))) {
+  if(isset($_SESSION['proRG'])) {
 echo '<a href="./uploadmain.php" class="nav-link px-2 text-warning">Đăng</a>';
 }
 else {
@@ -14,7 +14,7 @@ else {
 </li>
 <li class="nav-item">
 <?php
-if(isset(mysqli_real_escape_string($conn,$_SESSION['proRG']))) {
+if(isset($_SESSION['proRG'])) {
   echo '<a href="./shop.php" class="nav-link px-2 text-warning">Cửa hàng</a>';
 }
 else {
