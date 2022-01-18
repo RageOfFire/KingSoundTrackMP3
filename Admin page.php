@@ -13,7 +13,7 @@
 <?php include './assets/include/header.php'; ?>
 <main>
     <?php
-    if (isset($_SESSION['proRG'])) {
+    if (isset(mysqli_real_escape_string($conn,$_SESSION['proRG']))) {
         $sql_admin = "SELECT IsAdmin FROM profile WHERE account = '$profile'";
         $admin = $conn->query($sql_admin) or die($conn->error);
         while ($row = $admin->fetch_assoc()) {
@@ -39,6 +39,7 @@
         echo '<h1 class="text-center">Phát hiện phiên đăng nhập không hợp lệ</h1>';
     }
     ?>
+<?php include "./assets/include/music-kit.php"; ?>
 </main>
 <?php include './assets/include/footer.php'; ?>
 </body>

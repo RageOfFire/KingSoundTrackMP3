@@ -14,7 +14,7 @@
 <?php include './assets/include/header.php'; ?>
   <main>
   <?php
-if (isset($_SESSION['proRG'])) {}
+if (isset(mysqli_real_escape_string($conn,$_SESSION['proRG']))) {}
 else {
   $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
   header("location: ./");
@@ -37,7 +37,7 @@ else {
       </thead>
       <tbody>
         <?php
-        $profile = $_SESSION['proRG'];
+        $profile = mysqli_real_escape_string($conn,$_SESSION['proRG']);
         $sql_searchprofileid = "SELECT profile_id FROM profile WHERE account = '$profile'";
         $searchprofileid = $conn->query($sql_searchprofileid) or die($conn->error);
         while ($row = $searchprofileid->fetch_assoc()) {
@@ -173,6 +173,7 @@ else {
       </ul>
     </nav>
     <hr>
+    <?php include "./assets/include/music-kit.php"; ?>
   </main>
   <?php include './assets/include/footer.php'; ?>
 </body>

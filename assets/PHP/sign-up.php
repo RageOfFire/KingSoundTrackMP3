@@ -1,9 +1,9 @@
 <?php
 include_once "../include/connect.php";
-    $account=$_POST['proRG'];
-    $email=$_POST['emailRG'];
-    $pass=md5($_POST['passRG']);
-    $repass=$_POST['repassRG'];
+    $account=mysqli_real_escape_string($conn,$_POST['proRG']);
+    $email=mysqli_real_escape_string($conn,$_POST['emailRG']);
+    $pass=mysqli_real_escape_string($conn,md5($_POST['passRG']));
+    $repass=mysqli_real_escape_string($conn,$_POST['repassRG']);
     if ($_POST['passRG'] === $_POST['repassRG']) {
         if(isset($_POST['proRG']) && !empty($_POST['proRG']) && isset($_POST['emailRG']) && !empty($_POST['emailRG'])) 
         {

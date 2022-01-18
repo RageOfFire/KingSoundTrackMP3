@@ -12,7 +12,7 @@
 <body>
 <?php include './assets/include/header.php'; ?>
 <?php
-if (isset($_SESSION['proRG'])) {}
+if (isset(mysqli_real_escape_string($conn,$_SESSION['proRG']))) {}
 else {
   $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
   header("location: ./");
@@ -119,6 +119,7 @@ else {
             </ul>
           </nav>
             </div>
+            <?php include "./assets/include/music-kit.php"; ?>
     </main>
     <!-- Kết thúc phần thân -->
 <?php include './assets/include/footer.php'; ?>

@@ -5,9 +5,9 @@ if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
 }
 $message = "";
-$password = md5($_POST['passget']);
-$repassword = $_POST['repassget'];
-if ($_POST['passget'] == $_POST['repassget']) {
+$password = mysqli_real_escape_string($conn,md5($_POST['passget']));
+$repassword = mysqli_real_escape_string($conn,md5($_POST['repassget']));
+if ($password == $repassword) {
     $sql_updatepass = "UPDATE profile SET password = '$password' WHERE email='$email'";
     $updatepass = $conn->query($sql_updatepass) or die($conn->error);
     if($updatepass) {

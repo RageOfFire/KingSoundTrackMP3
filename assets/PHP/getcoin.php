@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once "../include/connect.php";
-$profile = $_SESSION['proRG'];
+$profile = mysqli_real_escape_string($conn,$_SESSION['proRG']);
 $coin = 0;
 // Lấy profile_id
 $sql_getprofile = "SELECT profile_id FROM profile WHERE account='$profile'";

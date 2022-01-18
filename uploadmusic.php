@@ -13,7 +13,7 @@
 <?php include './assets/include/header.php'; ?>
 <main>
 <?php
-if (isset($_SESSION['proRG'])) {}
+if (isset(mysqli_real_escape_string($conn,$_SESSION['proRG']))) {}
 else {
   $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
   header("location: ./");
@@ -69,6 +69,7 @@ else {
     </div>
     </form>
     <br>
+    <?php include "./assets/include/music-kit.php"; ?>
     </main>
     <?php include './assets/include/footer.php'; ?>
 <script src="./assets/javascript/seefilename.js"></script>

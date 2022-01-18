@@ -1,16 +1,19 @@
 <?php
 include_once "../include/connect.php";
-$account = $_POST['proRG'];
-$name = $_POST['nameRG'];
-$gender = $_POST['genderRG'];
-$address = $_POST['addressRG'];
+$account = mysqli_real_escape_string($conn,$_POST['proRG']);
+$name = mysqli_real_escape_string($conn,$_POST['nameRG']);
+$gender = mysqli_real_escape_string($conn,$_POST['genderRG']);
+$address = mysqli_real_escape_string($conn,$_POST['addressRG']);
 $phone = $_POST['phoneRG'];
 $email = $_POST['emailRG'];
-
+$randomnumber = rand(0,1000000);
 $pic_path = "../../Profile Storage/$account/img/";
 $pic_name = basename($_FILES['pictureRG']['name']);
 $pic_pathname = $pic_path . $pic_name;
 $pic_info = strtolower(pathinfo($pic_pathname, PATHINFO_EXTENSION));
+$pic_rename = $profile."_profilepicture_".date("Ymd").$randomnumber;
+$pic_newname = $pic_rename.".".$pic_info; 
+$pic_pathnewname = $pic_path.$pic_newname;
 // Xoá ảnh cũ
 $sql_oldpic = "SELECT picture FROM profile WHERE account = '$account'";
 $oldpic = $conn->query($sql_oldpic) or die($conn->error);
@@ -44,7 +47,7 @@ if(isset($_POST['phoneRG'])) {
             }
             else {}
             // Thực hiện xóa ảnh cũ nếu hoàn thành tất cả điều kiện trên
-            move_uploaded_file($_FILES['pictureRG']['tmp_name'],$pic_pathname);
+            move_uploaded_file($_FILES['pictureRG']['tmp_name'],$pic_pathnewname);
             $sql_edit = "UPDATE profile SET ";
             if (!empty($name)) {
                 $sql_edit .= "name = '$name',";
@@ -62,7 +65,7 @@ if(isset($_POST['phoneRG'])) {
                 $sql_edit .= "email = '$email',";
             }
             if (!empty($pic_name)) {
-                $sql_edit .= "picture = '$pic_name',";
+                $sql_edit .= "picture = '$pic_newname',";
             }
             $sql_edit = rtrim($sql_edit, ',');
             $sql_edit .= " WHERE account = '$account'";

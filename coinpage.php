@@ -14,7 +14,7 @@
 <?php include './assets/include/header.php'; ?>
   <main>
 <?php
-if (isset($_SESSION['proRG'])) {}
+if (isset(mysqli_real_escape_string($conn,$_SESSION['proRG']))) {}
 else {
   $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
   header("location: ./");
@@ -50,6 +50,7 @@ else {
           <p class="text-center p-3 mb-2 mt-2 bg-secondary text-light rounded">Thêm thông tin tại: <a href="https://opentdb.com" target="_blank" title="https://opentdb.com">https://opentdb.com</a></p>
           </div>
       </div>
+      <?php include "./assets/include/music-kit.php"; ?>
   </main>
   <?php include './assets/include/footer.php'; ?>
 </body>

@@ -14,7 +14,7 @@
 <?php include './assets/include/header.php'; ?>
   <main>
   <?php
-if (isset($_SESSION['proRG'])) {}
+if (isset(mysqli_real_escape_string($conn,$_SESSION['proRG']))) {}
 else {
   $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
   header("location: ./");
@@ -22,7 +22,7 @@ else {
 ?>
   <?php include './assets/include/check.php'; ?>
     <?php
-    $title = $_REQUEST['title'];
+    $title = mysqli_real_escape_string($conn,$_REQUEST['title']);
     $sql_getmusicinfo = "SELECT * FROM music WHERE title = '$title'";
     $getmusicinfo = $conn->query($sql_getmusicinfo) or die($conn->error);
     while ($row = $getmusicinfo->fetch_assoc()) {
@@ -80,6 +80,7 @@ else {
         </div>
     </form>
     <hr>
+    <?php include "./assets/include/music-kit.php"; ?>
   </main>
 <?php include './assets/include/footer.php'; ?>
   <script src="./assets/javascript/showimg.js"></script>

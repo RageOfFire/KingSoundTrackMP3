@@ -14,7 +14,7 @@
 <main>
 <?php include './assets/include/check.php'; ?>
 <?php
-if (isset($_SESSION['proRG'])) {}
+if (isset(mysqli_real_escape_string($conn,$_SESSION['proRG']))) {}
 else {
   $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
   header("location: ./");
@@ -52,7 +52,7 @@ else {
             }
             $number_of_item_music = 3;
             $start_at_music = ($music_page-1)*$number_of_item_music;
-            $keyword = $_GET['search'];
+            $keyword = mysqli_real_escape_string($conn,$_GET['search']);
             $sql_searchprofile3 = "SELECT * FROM profile WHERE account LIKE '%$keyword%' OR name LIKE '%$keyword%' ORDER BY profile_id LIMIT $start_at,$number_of_item";
             $searchprofile3 = $conn->query($sql_searchprofile3) or die($conn->error);
             $x = 0;
@@ -169,6 +169,7 @@ else {
             </ul>
           </nav>
       <hr>
+      <?php include "./assets/include/music-kit.php"; ?>
     </main>
     <?php include './assets/include/footer.php'; ?>
 </body>

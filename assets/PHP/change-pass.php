@@ -1,9 +1,9 @@
 <?php
 include_once "../include/connect.php";
-$account = $_POST['account'];
-$oldpass = $_POST['oldpassRG'];
-$newpass = $_POST['newpassRG'];
-$renewpass = $_POST['renewpassRG'];
+$account = mysqli_real_escape_string($conn,$_POST['account']);
+$oldpass = mysqli_real_escape_string($conn,md5($_POST['oldpassRG']));
+$newpass = mysqli_real_escape_string($conn,md5($_POST['newpassRG']));
+$renewpass = mysqli_real_escape_string($conn,md5($_POST['renewpassRG']));
 $sql_edit = "SELECT password FROM profile WHERE account='$account'";
 $result = $conn->query($sql_edit) or die($conn->error);
 while ($row=$result->fetch_assoc()) {

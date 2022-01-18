@@ -70,7 +70,7 @@
                 echo 
                 '<div class="music-item text-center">
                 <ul class="list-group m-5">
-                <li class="list-group-item list-group-item-warning"><a href="?list='.$row['list'].'#Music_choosen"><img src="./Profile Storage/'.$row['create_by'].'/img/'.$row['picture'].'" onError="this.onerror=null;this.src=`./assets/img/vector60-1116-01.jpg`;" alt="Music image" class="music-img img-fluid"></a></li>
+                <li class="list-group-item list-group-item-warning"><a href="./assets//PHP/music-pack.php?list='.$row['list'].'"><img src="./Profile Storage/'.$row['create_by'].'/img/'.$row['picture'].'" onError="this.onerror=null;this.src=`./assets/img/vector60-1116-01.jpg`;" alt="Music image" class="music-img img-fluid"></a></li>
                 <li class="list-group-item list-group-item-warning">Tên: '.$row['title'].'</li>
                 <li class="list-group-item list-group-item-warning">Thể loại: '.$row['gender'].'</li>
                 <li class="list-group-item list-group-item-warning">Tác giả: '.$row['author'].'</li>
@@ -125,22 +125,7 @@
           }
           else {}
           ?>
-          <!-- Tab nghe nhạc -->
-            <audio class="music-control" id="music">
-              <source src="./Profile Storage/<?php echo $profileMS;?>/music/<?php echo $mp3;?>" type="audio/mpeg">
-            </audio>
-            <nav class="navbar navbar-expand-lg fixed-bottom navbar-dark bg-dark">
-              <div class="container-fluid">
-                <a href="./assets/PHP/previousBtn.php?list=<?php if(isset($_GET['list'])) {$list = $_GET['list']; echo $list;} else { $list = 1; echo $list;}?>"><button class="d-inline-block btn btn-outline-warning mx-3 btn-sm" type="button" id="previousBtn"><i class="fas fa-backward"></i></button></a>
-                <button class="d-inline-block btn btn-outline-warning mx-3" type="button" id="playBtn"><i class="far fa-play-circle"></i></button>
-                <a href="./assets/PHP/NextBtn.php?list=<?php if(isset($_GET['list'])) {$list = $_GET['list']; echo $list;} else { $list = 1; echo $list;}?>"><button class="d-inline-block btn btn-outline-warning mx-3 btn-sm" type="button" id="nextBtn"><i class="fas fa-forward"></i></button></a>
-                <p class="align-middle text-warning" id="currentTime">00:00:00</p><p class="text-warning">/</p"><p id="Duration" class="text-warning">00:00:00</p>
-                <input type="range" class="d-inline-block form-range mx-3" id="time" max="100" value="0">
-                <button class="d-inline-block btn btn-outline-warning mx-3 btn-sm" type="button" id="volumeBtn"><i class="fas fa-volume-up"></i></button>
-                <input type="range" class="d-inline-block form-range mx-3" id="volume" max="100" value="100" style="width:20%;">
-              </div>
-            </nav>
-            <!-- Tab nghe nhạc -->
+<?php include "./assets/include/music-kit.php"; ?>
     </main>
     <!-- Kết thúc phần thân -->
 <?php include './assets/include/footer.php'; ?>
@@ -204,6 +189,4 @@
 </div>
 <!-- Form Đăng ký -->
 </body>
-<script src="./assets/javascript/musicplayers.js"></script>
-<script src="./assets/javascript/TriggerEnterKey.js"></script>
 </html>

@@ -13,14 +13,14 @@
 <body>
 <?php include './assets/include/header.php'; ?>
 <?php
-if (isset($_SESSION['proRG'])) {}
+if (isset(mysqli_real_escape_string($conn,$_SESSION['proRG']))) {}
 else {
   $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
   header("location: ./");
 }
 ?>
   <?php
-  $get_profile = $_SESSION['proRG'];
+  $get_profile = mysqli_real_escape_string($conn,$_SESSION['proRG']);
   $sql_edit = "SELECT * FROM profile WHERE account = '$get_profile'";
   $result_profile = $conn->query($sql_edit) or die($conn->error);
   while ($row = $result_profile->fetch_assoc()) {
@@ -93,6 +93,7 @@ else {
         </div>
     </form>
     <br>
+    <?php include "./assets/include/music-kit.php"; ?>
   </main>
   <?php include './assets/include/footer.php'; ?>
 <!-- Form Đổi mật khẩu -->

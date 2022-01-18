@@ -1,17 +1,21 @@
 <?php
 session_start();
 include_once "../include/connect.php";
-$profile = $_SESSION['proRG'];
-$mp3file = $_POST['mp3fileRG'];
-$mp3title = $_POST['mp3titleRG'];
-$mp3author = $_POST['mp3authorRG'];
+$profile = mysqli_real_escape_string($conn,$_SESSION['proRG']);
+$mp3file = mysqli_real_escape_string($conn,$_POST['mp3fileRG']);
+$mp3title = mysqli_real_escape_string($conn,$_POST['mp3titleRG']);
+$mp3author = mysqli_real_escape_string($conn,$_POST['mp3authorRG']);
 $mp3genders = $_POST['mp3genderRG'];
-$mp3desc = $_POST['mp3descRG'];
+$mp3desc = mysqli_real_escape_string($conn,$_POST['mp3descRG']);
+$randomnumber = rand(0,1000000);
 // Bắt đầu lấy dữ liệu các file
 $pic_path = "../../Profile Storage/$profile/img/";
 $pic_name = basename($_FILES['mp3pictureRG']['name']);
 $pic_pathname = $pic_path . $pic_name;
 $pic_info = strtolower(pathinfo($pic_pathname, PATHINFO_EXTENSION));
+$pic_rename = $profile."_musicpicture_".date("Ymd").$randomnumber;
+$pic_newname = $pic_rename.".".$pic_info; 
+$pic_pathnewname = $pic_path.$pic_newname;
 // Lấy dữ liệu các file kết thúc
 // Chuẩn bị ảnh cũ
 $sql_oldpic = "SELECT picture FROM music WHERE soundfile = '$mp3file'";
@@ -40,7 +44,7 @@ if ($pic_info = "jpg" || $pic_info = "png") {
         header ('location: ../../editmusicpage.php?title='.$mp3title);
     }
     // Thực hiện xóa ảnh cũ nếu hoàn thành tất cả điều kiện trên
-    move_uploaded_file($_FILES['mp3pictureRG']['tmp_name'],$pic_pathname);
+    move_uploaded_file($_FILES['mp3pictureRG']['tmp_name'],$pic_pathnewname);
     $sql_editmusic = "UPDATE music SET ";
     if(!empty($mp3title)) {
         $sql_editmusic .= "title = '$mp3title',";
@@ -49,7 +53,7 @@ if ($pic_info = "jpg" || $pic_info = "png") {
         $sql_editmusic .= "author = '$mp3author',";
     }
     if (!empty($pic_name)) {
-        $sql_editmusic .= "picture = '$pic_name',";
+        $sql_editmusic .= "picture = '$pic_newname',";
     }
     if (!empty($mp3desc)) {
         $sql_editmusic .= "description = '$mp3desc',";

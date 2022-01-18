@@ -6,8 +6,8 @@
                 <li><a href="./" class="nav-link px-2 text-white">Trang chủ</a></li>
                 <li>
                 <?php
-                if(isset($_SESSION['proRG'])) {
-                $profile = $_SESSION['proRG'];
+                if(mysqli_real_escape_string($conn,isset($_SESSION['proRG']))) {
+                $profile = mysqli_real_escape_string($conn,$_SESSION['proRG']);
                     echo '<a href="./uploadmain.php" class="nav-link px-2 text-white">Đăng</a>';
                 }
                 else {
@@ -17,7 +17,7 @@
                 </li>
                 <li>
                 <?php
-                if(isset($_SESSION['proRG'])) {
+                if(isset(mysqli_real_escape_string($conn,$_SESSION['proRG']))) {
                     echo '<a href="./shop.php" class="nav-link px-2 text-white">Cửa hàng</a>';
                 }
                 else {
@@ -29,7 +29,7 @@
                 <li>
                 <?php
                 include_once './assets/include/connect.php';
-                if(isset($_SESSION['proRG'])) {
+                if(isset(mysqli_real_escape_string($conn,$_SESSION['proRG']))) {
                 $sql_checkadmin = "SELECT IsAdmin FROM profile WHERE account = '$profile'";
                 $checkadmin = $conn->query($sql_checkadmin) or die($conn->error);
                 while ($row = $checkadmin->fetch_assoc()) {

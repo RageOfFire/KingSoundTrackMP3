@@ -1,7 +1,7 @@
 <?php
 include_once "../include/connect.php";
-    $account=$_REQUEST['account'];
-    $title = $_REQUEST['title'];
+    $account=mysqli_real_escape_string($conn,$_REQUEST['account']);
+    $title = mysqli_real_escape_string($conn,$_REQUEST['title']);
     $pic_path = "../../Profile Storage/$account/img/";
     $file_path = "../../Profile Storage/$account/music/";
     $sql_getpic = "SELECT picture,soundfile FROM music WHERE create_by='$account'";
