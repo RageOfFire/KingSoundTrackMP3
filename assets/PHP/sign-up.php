@@ -2,7 +2,7 @@
 include_once "../include/connect.php";
     $account=$_POST['proRG'];
     $email=$_POST['emailRG'];
-    $pass=$_POST['passRG'];
+    $pass=md5($_POST['passRG']);
     $repass=$_POST['repassRG'];
     if ($_POST['passRG'] === $_POST['repassRG']) {
         if(isset($_POST['proRG']) && !empty($_POST['proRG']) && isset($_POST['emailRG']) && !empty($_POST['emailRG'])) 
