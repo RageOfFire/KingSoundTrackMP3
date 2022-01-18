@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 19, 2021 at 11:40 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.11
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th1 18, 2022 lúc 05:10 PM
+-- Phiên bản máy phục vụ: 10.4.22-MariaDB
+-- Phiên bản PHP: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `kingsoundtrackmp3`
+-- Cơ sở dữ liệu: `kingsoundtrackmp3`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `coin_history`
+-- Cấu trúc bảng cho bảng `coin_history`
 --
 
 CREATE TABLE `coin_history` (
@@ -38,7 +38,7 @@ CREATE TABLE `coin_history` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `gender`
+-- Cấu trúc bảng cho bảng `gender`
 --
 
 CREATE TABLE `gender` (
@@ -47,7 +47,7 @@ CREATE TABLE `gender` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `gender`
+-- Đang đổ dữ liệu cho bảng `gender`
 --
 
 INSERT INTO `gender` (`gender_id`, `gender`) VALUES
@@ -69,7 +69,7 @@ INSERT INTO `gender` (`gender_id`, `gender`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `history`
+-- Cấu trúc bảng cho bảng `history`
 --
 
 CREATE TABLE `history` (
@@ -84,7 +84,7 @@ CREATE TABLE `history` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `music`
+-- Cấu trúc bảng cho bảng `music`
 --
 
 CREATE TABLE `music` (
@@ -103,7 +103,7 @@ CREATE TABLE `music` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `profile`
+-- Cấu trúc bảng cho bảng `profile`
 --
 
 CREATE TABLE `profile` (
@@ -123,10 +123,17 @@ CREATE TABLE `profile` (
   `picture` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Đang đổ dữ liệu cho bảng `profile`
+--
+
+INSERT INTO `profile` (`profile_id`, `account`, `IsAdmin`, `password`, `name`, `coin`, `item`, `gender`, `address`, `create_date`, `phone`, `email`, `code`, `picture`) VALUES
+('8ce0749e-786d-11ec-bad8-80e82c12f177', 'SonVip', 0, '1885e46b0ec4e787fad11754c7319b50', NULL, 0, NULL, NULL, NULL, '2022-01-18 21:47:25', NULL, 'buihongson453@gmail.com', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `shop`
+-- Cấu trúc bảng cho bảng `shop`
 --
 
 CREATE TABLE `shop` (
@@ -139,7 +146,7 @@ CREATE TABLE `shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `shop`
+-- Đang đổ dữ liệu cho bảng `shop`
 --
 
 INSERT INTO `shop` (`shop_id`, `title`, `item`, `coin`, `description`, `picture`) VALUES
@@ -157,69 +164,69 @@ INSERT INTO `shop` (`shop_id`, `title`, `item`, `coin`, `description`, `picture`
 ('bc004c5a-42ba-11ec-83fc-80e82c12f177', 'Code', 'fas fa-code', 200, '1 code sẽ được gắn cùng với profile của bạn\r\nP/s: Sẽ thay thế cho 1 icon khác nếu mua', 'code.png');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `coin_history`
+-- Chỉ mục cho bảng `coin_history`
 --
 ALTER TABLE `coin_history`
   ADD PRIMARY KEY (`history_id`),
   ADD KEY `profile_id` (`profile_id`);
 
 --
--- Indexes for table `gender`
+-- Chỉ mục cho bảng `gender`
 --
 ALTER TABLE `gender`
   ADD PRIMARY KEY (`gender_id`);
 
 --
--- Indexes for table `history`
+-- Chỉ mục cho bảng `history`
 --
 ALTER TABLE `history`
   ADD PRIMARY KEY (`history_item_id`);
 
 --
--- Indexes for table `music`
+-- Chỉ mục cho bảng `music`
 --
 ALTER TABLE `music`
   ADD PRIMARY KEY (`music_id`),
   ADD KEY `list` (`list`) USING BTREE;
 
 --
--- Indexes for table `profile`
+-- Chỉ mục cho bảng `profile`
 --
 ALTER TABLE `profile`
   ADD PRIMARY KEY (`profile_id`);
 
 --
--- Indexes for table `shop`
+-- Chỉ mục cho bảng `shop`
 --
 ALTER TABLE `shop`
   ADD PRIMARY KEY (`shop_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `gender`
+-- AUTO_INCREMENT cho bảng `gender`
 --
 ALTER TABLE `gender`
   MODIFY `gender_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `music`
+-- AUTO_INCREMENT cho bảng `music`
 --
 ALTER TABLE `music`
-  MODIFY `list` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `list` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `coin_history`
+-- Các ràng buộc cho bảng `coin_history`
 --
 ALTER TABLE `coin_history`
   ADD CONSTRAINT `coin_history_ibfk_1` FOREIGN KEY (`profile_id`) REFERENCES `profile` (`profile_id`);
