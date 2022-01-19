@@ -31,7 +31,7 @@ else {
             <th>Thể loại</th>
             <th>Tác giả</th>
             <th>Được thêm vào</th>
-            <th colspan="2" class="text-center">Cài đặt</th>
+            <th colspan="3" class="text-center">Cài đặt</th>
           </tr>
         </thead>
         <tbody>
@@ -58,6 +58,7 @@ else {
               <td class="bg-success">'.$row['gender'].'</td>
               <td class="bg-success">'.$row['author'].'</td>
               <td class="bg-success">'.$row['create_at'].'</td>
+              <td class="bg-dark"><a href="./assets/PHP/music-pack.php?list='.$row['list'].'"><button class="btn btn-primary"><i class="far fa-play-circle"></i></button></a></td>
               <td class="bg-dark"><a href="./editmusicpage.php?title='.$title.'"><button class="btn btn-success"><i class="fas fa-edit"></i></button></a></td>
               <td class="bg-dark"><a onClick="javascript: return confirm(`Xác nhận xóa bài hát '.$title.' ?`);" href="./assets/PHP/deletemusic.php?account='.$profile.'&title='.$title.'"><button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button></a></td>
               </tr>
