@@ -8,7 +8,7 @@
 echo '<a href="./uploadmain.php" class="nav-link px-2 text-warning">Đăng</a>';
 }
 else {
-  echo '<a onClick="alert(`Bạn cần đăng nhập để vào trang này`)" href="" class="nav-link px-2 text-warning">Đăng</a>';
+  echo '<a onClick="alert(`Bạn cần đăng nhập để vào trang này`)" href="javascript:void(0)" class="nav-link px-2 text-warning">Đăng</a>';
 }
 ?>
 </li>
@@ -18,7 +18,7 @@ if(isset($_SESSION['proRG'])) {
   echo '<a href="./shop.php" class="nav-link px-2 text-warning">Cửa hàng</a>';
 }
 else {
-  echo '<a onClick="alert(`Bạn cần đăng nhập để vào trang này`)" href="" class="nav-link px-2 text-warning">Cửa hàng</a>';
+  echo '<a onClick="alert(`Bạn cần đăng nhập để vào trang này`)" href="javascript:void(0)" class="nav-link px-2 text-warning">Cửa hàng</a>';
 }
 ?>
 </li>

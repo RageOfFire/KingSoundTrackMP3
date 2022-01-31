@@ -22,6 +22,6 @@ if (mysqli_multi_query($conn, $sql_reset)) {
     while (mysqli_next_result($conn));
     }
     // Reset lại list 
-    header('location:../../uploadmain.php');
+    echo '<script>history.back()</script>';
     $conn -> close();
 ?>
