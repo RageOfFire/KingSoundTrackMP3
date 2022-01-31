@@ -23,7 +23,7 @@ include_once "../include/connect.php";
                 mkdir("../../Profile Storage/".$account."/",0755);
                 mkdir("../../Profile Storage/".$account."/music",0755);
                 mkdir("../../Profile Storage/".$account."/img",0755);
-                $sql_insert = "INSERT INTO profile (profile_id,account,IsAdmin,password,coin,create_date,email) VALUES (UUID(),'$account',0,'$pass',0,NOW(),'$email')";
+                $sql_insert = "INSERT INTO profile (profile_id,account,password,coin,create_date,email) VALUES (UUID(),'$account','$pass',0,NOW(),'$email')";
                 $results = $conn -> query($sql_insert) or die ($conn->error);
                 if ($results) {
                     $_SESSION['success'] = "Bạn đã đăng ký thành công với tài khoản: ".$account." !";
