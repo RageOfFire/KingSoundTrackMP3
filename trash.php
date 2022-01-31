@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nhạc của bạn</title>
+    <title>Thùng rác của bạn</title>
     <?php include './assets/include/framework.php'; ?>
     <link rel="stylesheet" href="./assets/css/uploadmain.css">
 </head>
@@ -20,17 +20,8 @@ else {
   header("location: ./");
 }
 ?>
-    <h1 class="text-center">Nhạc của bạn</h1>
-    <h2 class="text-center">
-      <a href="./uploadmusic.php"><button type="button" class="btn btn-success"><i class="far fa-file"></i> Thêm nhạc <i class="far fa-file"></i></button></a>
-      <a href="./trash.php"><button type="button" class="btn btn-secondary"><i class="fas fa-trash"></i> Thùng rác (
-        <?php
-        $sql_trash = "SELECT * FROM music WHERE create_by = '$profile' AND is_deleted = 1";
-        $trash = $conn->query($sql_trash) or die($conn->error);
-        echo $trash->num_rows;
-        ?>
-        ) <i class="fas fa-trash"></i></button></a>
-    </h2>
+    <h1 class="text-center">Thùng rác của bạn</h1>
+    <h2><a href="./uploadmain.php"><button type="button" class="btn btn-primary"><i class="fas fa-arrow-circle-left"></i> Quay lại</button></a></h2>
     <table class="table table-hover table-bordered text-center">
         <thead>
           <tr class="table-primary">
@@ -39,8 +30,8 @@ else {
             <th>Tên</th>
             <th>Thể loại</th>
             <th>Tác giả</th>
-            <th>Được thêm vào</th>
-            <th colspan="4" class="text-center">Cài đặt</th>
+            <th>Xóa vào ngày</th>
+            <th colspan="2" class="text-center">Cài đặt</th>
           </tr>
         </thead>
         <tbody>
@@ -53,7 +44,7 @@ else {
             }
             $number_of_item = 3;
             $start_at = ($page-1)*$number_of_item;
-            $sql_getmusic3 = "SELECT * FROM music WHERE create_by ='$profile' AND is_deleted = 0 ORDER BY list LIMIT $start_at,$number_of_item";
+            $sql_getmusic3 = "SELECT * FROM music WHERE create_by ='$profile' AND is_deleted = 1 ORDER BY list LIMIT $start_at,$number_of_item";
             $getmusic3 = $conn->query($sql_getmusic3) or die($conn->error);
             $x = 0;
             while ($row = $getmusic3->fetch_assoc()) {
@@ -65,11 +56,9 @@ else {
               <td class="bg-success">'.$row['title'].'</td>
               <td class="bg-success">'.$row['gender'].'</td>
               <td class="bg-success">'.$row['author'].'</td>
-              <td class="bg-success">'.$row['create_at'].'</td>
-              <td class="bg-dark"><a href="./assets/PHP/music-pack.php?list='.$row['list'].'"><button class="btn btn-primary"><i class="far fa-play-circle"></i></button></a></td>
-              <td class="bg-dark"><a href="./Profile Storage/'.$row['create_by'].'/music/'.$row['soundfile'].'" download><button class="btn btn-info"><i class="fas fa-arrow-alt-circle-down"></i></button></a></td>
-              <td class="bg-dark"><a href="./editmusicpage.php?title='.$row['title'].'"><button class="btn btn-success"><i class="fas fa-edit"></i></button></a></td>
-              <td class="bg-dark"><a href="./assets/PHP/softdelete.php?title='.$row['title'].'"><button class="btn btn-danger"><i class="fas fa-trash"></i></button></a></td>
+              <td class="bg-success">'.$row['delete_at'].'</td>
+              <td class="bg-dark"><a href="./assets/PHP/restore-music.php?title='.$row['title'].'"><button class="btn btn-success"><i class="fas fa-sync"></i></button></a></td>
+              <td class="bg-dark"><a onClick="javascript: return confirm(`Xác nhận xóa bài hát '.$row['title'].' ?\nHành động này không thể hoàn tác.`);" href="./assets/PHP/deletemusic.php?account='.$profile.'&title='.$row['title'].'"><button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button></a></td>
               </tr>
               ';
             }
@@ -79,7 +68,7 @@ else {
       <nav aria-label="Page navigation">
             <ul class="pagination justify-content-end">
             <?php
-            $sql_music = "SELECT * FROM music WHERE create_by ='$profile' AND is_deleted = 0";
+            $sql_music = "SELECT * FROM music WHERE create_by ='$profile' AND is_deleted = 1";
             $music = $conn->query($sql_music) or die($conn->error);
             $total_music = $music->num_rows;
             $total_pages = ceil($total_music/$number_of_item);
