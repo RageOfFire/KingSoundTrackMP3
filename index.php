@@ -76,6 +76,7 @@
                 <li class="list-group-item list-group-item-warning">Tác giả: '.$row['author'].'</li>
                 <li class="list-group-item list-group-item-warning">Được thêm bởi: '.$row['create_by'].'</li>
                 <li class="list-group-item list-group-item-warning">Mô tả: '.$row['description'].'</li>
+                <li class="list-group-item list-group-item-warning"><a href="./Profile Storage/'.$row['create_by'].'/music/'.$row['soundfile'].'" download><button type="button" class="btn btn-success"><i class="fas fa-arrow-alt-circle-down"></i> Tải xuống <i class="fas fa-arrow-alt-circle-down"></i></button></a></li>
               </ul>
               </div>';
               }

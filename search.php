@@ -115,7 +115,7 @@ else {
             <th>Thể loại</th>
             <th>Được thêm vào</th>
             <th>Được thêm bởi</th>
-            <th>Hành động</th>
+            <th colspan="2" class="text-center">Hành động</th>
           </tr>
         </thead>
         <tbody>
@@ -134,6 +134,7 @@ else {
               <td class="bg-success">'.$row['create_at'].'</td>
               <td class="bg-success">'.$row['create_by'].'</td>
               <td class="bg-dark"><a href="./assets/PHP/music-pack.php?list='.$row['list'].'"><button class="btn btn-primary"><i class="far fa-play-circle"></i></button></a></td>
+              <td class="bg-dark"><a href="./Profile Storage/'.$row['create_by'].'/music/'.$row['soundfile'].'" download><button class="btn btn-info"><i class="fas fa-arrow-alt-circle-down"></i></button></a></td>
               </tr>
               ';
             }
