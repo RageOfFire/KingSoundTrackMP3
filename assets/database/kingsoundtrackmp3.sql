@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 18, 2022 lúc 05:10 PM
+-- Thời gian đã tạo: Th1 31, 2022 lúc 06:13 PM
 -- Phiên bản máy phục vụ: 10.4.22-MariaDB
 -- Phiên bản PHP: 8.1.1
 
@@ -97,7 +97,9 @@ CREATE TABLE `music` (
   `create_by` varchar(255) NOT NULL,
   `soundfile` varchar(255) NOT NULL,
   `picture` varchar(255) DEFAULT NULL,
-  `description` varchar(255) DEFAULT NULL
+  `description` varchar(255) DEFAULT NULL,
+  `is_deleted` tinyint(1) NOT NULL DEFAULT 0,
+  `delete_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -109,7 +111,7 @@ CREATE TABLE `music` (
 CREATE TABLE `profile` (
   `profile_id` varchar(200) NOT NULL,
   `account` varchar(100) NOT NULL,
-  `IsAdmin` tinyint(1) NOT NULL,
+  `IsAdmin` tinyint(1) NOT NULL DEFAULT 0,
   `password` varchar(50) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `coin` int(20) DEFAULT NULL,
@@ -122,13 +124,6 @@ CREATE TABLE `profile` (
   `code` int(6) DEFAULT NULL,
   `picture` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Đang đổ dữ liệu cho bảng `profile`
---
-
-INSERT INTO `profile` (`profile_id`, `account`, `IsAdmin`, `password`, `name`, `coin`, `item`, `gender`, `address`, `create_date`, `phone`, `email`, `code`, `picture`) VALUES
-('8ce0749e-786d-11ec-bad8-80e82c12f177', 'SonVip', 0, '1885e46b0ec4e787fad11754c7319b50', NULL, 0, NULL, NULL, NULL, '2022-01-18 21:47:25', NULL, 'buihongson453@gmail.com', NULL, NULL);
 
 -- --------------------------------------------------------
 
