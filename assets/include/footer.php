@@ -22,7 +22,7 @@ else {
 }
 ?>
 </li>
-<li class="nav-item"><a href="./about.html" class="nav-link px-2 text-warning">Về chúng tôi</a></li>
+<li class="nav-item"><a href="./about.php" class="nav-link px-2 text-warning">Về chúng tôi</a></li>
 </ul>
 </footer>
 <script>

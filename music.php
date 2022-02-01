@@ -9,7 +9,7 @@
     <?php include './assets/include/framework.php'; ?>
     <link rel="stylesheet" href="./assets/css/uploadmain.css">
 </head>
-<body>
+<body onload="Notification()">
 <?php include './assets/include/header.php'; ?>
 <main>
 <?php include './assets/include/check.php'; ?>
@@ -78,6 +78,12 @@
               $i = 0;
               while ($row = $getmusicfromgender->fetch_assoc()) {
                 $i++;
+                if (!empty($row['description'])) {
+                  $description = $row['description'];
+                }
+                else {
+                  $description = "Không có mô tả !";
+                }
                 echo 
                 '<tr>
                 <td class="bg-success">'.$i.'</td>
@@ -86,7 +92,11 @@
                 <td class="bg-success">'.$row['gender'].'</td>
                 <td class="bg-success">'.$row['author'].'</td>
                 <td class="bg-success">'.$row['create_by'].'</td>
-                <td class="bg-success">'.$row['description'].'</td>
+                <td class="bg-success">
+                <button type="button" class="btn btn-info" data-bs-toggle="tooltip" data-bs-placement="top" title="'.$description.'">
+                <i class="far fa-sticky-note"></i>
+                </button>
+                </td>
                 <td class="bg-dark"><a href="./assets/PHP/music-pack.php?list='.$row['list'].'"><button class="btn btn-primary"><i class="far fa-play-circle"></i></button></a></td>
                 </tr>
                 ';
@@ -118,5 +128,26 @@
     </main>
     <?php include './assets/include/footer.php'; ?>
     <script src="./assets/javascript/musicplayers.js"></script>
+<!-- Thông báo khi vào trang -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">KingSoundTrackMP3</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body text-white bg-success">
+        Đây là nơi bạn có thể nhạc và chọn tất cả các loại nhạc!
+      </div>
+      </div>
+    </div>
+  </div>
+<script>
+  var toastLive = document.getElementById('liveToast')
+  function Notification() {
+  var toast = new bootstrap.Toast(toastLive)
+  toast.show()
+  }
+</script>
+<!-- Thông báo khi vào trang -->
 </body>
 </html>

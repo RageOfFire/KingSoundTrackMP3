@@ -25,7 +25,7 @@
                 }
                 ?>
                 </li>
-                <li><a href="./about.html" class="nav-link px-2 text-white">Về chúng tôi</a></li>
+                <li><a href="./about.php" class="nav-link px-2 text-white">Về chúng tôi</a></li>
                 <li>
                 <?php
                 include_once './assets/include/connect.php';

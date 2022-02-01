@@ -9,7 +9,7 @@
     <?php include './assets/include/framework.php'; ?>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
+<body onload="Notification()">
   <?php include './assets/include/header.php'; ?>
     <!-- Phần thân -->
     <?php include './assets/include/check.php'; ?>
@@ -135,7 +135,7 @@
           }
           else {}
           ?>
-<?php include "./assets/include/music-kit.php"; ?>
+          <?php include "./assets/include/music-kit.php"; ?>
     </main>
     <!-- Kết thúc phần thân -->
 <?php include './assets/include/footer.php'; ?>
@@ -198,5 +198,26 @@
   </div>
 </div>
 <!-- Form Đăng ký -->
+<!-- Thông báo khi vào trang -->
+<div class="position-fixed end-0 p-3" style="z-index: 11; bottom: 5rem">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">KingSoundTrackMP3</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body text-white bg-success">
+        Chào mừng bạn tới KingSoundTrackMP3!
+      </div>
+      </div>
+    </div>
+  </div>
+<script>
+  var toastLive = document.getElementById('liveToast')
+  function Notification() {
+  var toast = new bootstrap.Toast(toastLive)
+  toast.show()
+  }
+</script>
+<!-- Thông báo khi vào trang -->
 </body>
 </html>
