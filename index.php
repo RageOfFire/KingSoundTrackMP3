@@ -64,7 +64,7 @@
               }
               $number_of_item = 6;
               $start_at = ($page-1)*$number_of_item;
-              $sql_getmusic6 = "SELECT * FROM music LIMIT $start_at,$number_of_item";
+              $sql_getmusic6 = "SELECT * FROM music WHERE is_deleted = 0 LIMIT $start_at,$number_of_item";
               $getmusic6 = $conn->query($sql_getmusic6) or die($conn->error);
               while ($row = $getmusic6->fetch_assoc()) {
                 echo 
@@ -75,8 +75,11 @@
                 <li class="list-group-item list-group-item-warning">Thể loại: '.$row['gender'].'</li>
                 <li class="list-group-item list-group-item-warning">Tác giả: '.$row['author'].'</li>
                 <li class="list-group-item list-group-item-warning">Được thêm bởi: '.$row['create_by'].'</li>
-                <li class="list-group-item list-group-item-warning">Mô tả: '.$row['description'].'</li>
-                <li class="list-group-item list-group-item-warning"><a href="./Profile Storage/'.$row['create_by'].'/music/'.$row['soundfile'].'" download><button type="button" class="btn btn-success"><i class="fas fa-arrow-alt-circle-down"></i> Tải xuống <i class="fas fa-arrow-alt-circle-down"></i></button></a></li>
+                <li class="list-group-item list-group-item-warning"> Mô tả: 
+                <button type="button" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="bottom" title="'.$row['description'].'">
+                <i class="far fa-sticky-note"></i>
+                </button>
+                </li>
               </ul>
               </div>';
               }
@@ -86,7 +89,7 @@
           <nav aria-label="Page navigation">
             <ul class="pagination justify-content-end">
             <?php
-            $sql_getallmusic = "SELECT * FROM music";
+            $sql_getallmusic = "SELECT * FROM music WHERE is_deleted = 0";
             $getallmusic = $conn->query($sql_getallmusic) or die($conn->error);
             $total_music = $getallmusic->num_rows;
             $total_pages = ceil($total_music/$number_of_item);
@@ -117,7 +120,7 @@
           <?php
           if (isset($_REQUEST['list'])) {
           $list = $_REQUEST['list'];
-          $sql_music = "SELECT soundfile,create_by FROM music WHERE list = '$list'";
+          $sql_music = "SELECT soundfile,create_by FROM music WHERE list = '$list' AND is_deleted = 0";
           $music_query = $conn->query($sql_music) or die($conn->error);
           while ($row = $music_query->fetch_assoc()) {
             $profileMS = $row['create_by'];

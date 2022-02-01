@@ -35,12 +35,13 @@ else {
         <thead>
           <tr class="table-primary">
             <th>STT</th>
-            <th></th>
+            <th>Ảnh</th>
             <th>Tên</th>
             <th>Thể loại</th>
             <th>Tác giả</th>
             <th>Được thêm vào</th>
-            <th colspan="4" class="text-center">Cài đặt</th>
+            <th>Mô tả</th>
+            <th colspan="3" class="text-center">Cài đặt</th>
           </tr>
         </thead>
         <tbody>
@@ -66,8 +67,12 @@ else {
               <td class="bg-success">'.$row['gender'].'</td>
               <td class="bg-success">'.$row['author'].'</td>
               <td class="bg-success">'.$row['create_at'].'</td>
+              <td class="bg-success">
+              <button type="button" class="btn btn-info" data-bs-toggle="tooltip" data-bs-placement="top" title="'.$row['description'].'">
+              <i class="far fa-sticky-note"></i>
+              </button>
+              </td>
               <td class="bg-dark"><a href="./assets/PHP/music-pack.php?list='.$row['list'].'"><button class="btn btn-primary"><i class="far fa-play-circle"></i></button></a></td>
-              <td class="bg-dark"><a href="./Profile Storage/'.$row['create_by'].'/music/'.$row['soundfile'].'" download><button class="btn btn-info"><i class="fas fa-arrow-alt-circle-down"></i></button></a></td>
               <td class="bg-dark"><a href="./editmusicpage.php?title='.$row['title'].'"><button class="btn btn-success"><i class="fas fa-edit"></i></button></a></td>
               <td class="bg-dark"><a href="./assets/PHP/softdelete.php?title='.$row['title'].'"><button class="btn btn-danger"><i class="fas fa-trash"></i></button></a></td>
               </tr>
