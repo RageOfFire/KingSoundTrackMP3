@@ -67,6 +67,12 @@
               $sql_getmusic6 = "SELECT * FROM music WHERE is_deleted = 0 LIMIT $start_at,$number_of_item";
               $getmusic6 = $conn->query($sql_getmusic6) or die($conn->error);
               while ($row = $getmusic6->fetch_assoc()) {
+                if (!empty($row['description'])) {
+                  $description = $row['description'];
+                }
+                else {
+                  $description = "Không có mô tả !";
+                }
                 echo 
                 '<div class="music-item text-center">
                 <ul class="list-group m-5">
@@ -76,7 +82,7 @@
                 <li class="list-group-item list-group-item-warning">Tác giả: '.$row['author'].'</li>
                 <li class="list-group-item list-group-item-warning">Được thêm bởi: '.$row['create_by'].'</li>
                 <li class="list-group-item list-group-item-warning"> Mô tả: 
-                <button type="button" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="bottom" title="'.$row['description'].'">
+                <button type="button" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="bottom" title="'.$description.'">
                 <i class="far fa-sticky-note"></i>
                 </button>
                 </li>

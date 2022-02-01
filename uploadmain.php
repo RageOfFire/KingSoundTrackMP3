@@ -59,6 +59,12 @@ else {
             $x = 0;
             while ($row = $getmusic3->fetch_assoc()) {
               $x++;
+              if (!empty($row['description'])) {
+                $description = $row['description'];
+              }
+              else {
+                $description = "Không có mô tả !";
+              }
               echo 
               '<tr>
               <td class="bg-success">'.$x.'</td>
@@ -68,7 +74,7 @@ else {
               <td class="bg-success">'.$row['author'].'</td>
               <td class="bg-success">'.$row['create_at'].'</td>
               <td class="bg-success">
-              <button type="button" class="btn btn-info" data-bs-toggle="tooltip" data-bs-placement="top" title="'.$row['description'].'">
+              <button type="button" class="btn btn-info" data-bs-toggle="tooltip" data-bs-placement="top" title="'.$description.'">
               <i class="far fa-sticky-note"></i>
               </button>
               </td>

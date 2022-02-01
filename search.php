@@ -50,12 +50,18 @@ else {
             $start_at = ($page-1)*$number_of_item;
             $sql_searchmusic3 = "SELECT * FROM music WHERE (title LIKE '%$keyword%' OR author LIKE '%$keyword%' OR create_by LIKE '%$keyword%' OR description LIKE '%$keyword%') AND is_deleted = 0 ORDER BY list LIMIT $start_at,$number_of_item";
             $searchmusic3 = $conn->query($sql_searchmusic3) or die($conn->error);
-            $y = 0;
+            $x = 0;
             while ($row = $searchmusic3->fetch_assoc()) {
-              $y++;
+              if (!empty($row['description'])) {
+                $description = $row['description'];
+              }
+              else {
+                $description = "Không có mô tả !";
+              }
+              $x++;
               echo 
               '<tr>
-              <td class="bg-success">'.$y.'</td>
+              <td class="bg-success">'.$x.'</td>
               <td class="bg-success"><img class="img-thumnail" onError="this.onerror=null;this.src=`./assets/img/vector60-1116-01.jpg`;" src="./Profile Storage/'.$row['create_by'].'/img/'.$row['picture'].'" alt="Music Thumnail" width="40px" height="40px"></td>
               <td class="bg-success">'.$row['title'].'</td>
               <td class="bg-success">'.$row['gender'].'</td>
@@ -63,7 +69,7 @@ else {
               <td class="bg-success">'.$row['create_at'].'</td>
               <td class="bg-success">'.$row['create_by'].'</td>
               <td class="bg-success">
-              <button type="button" class="btn btn-info" data-bs-toggle="tooltip" data-bs-placement="top" title="'.$row['description'].'">
+              <button type="button" class="btn btn-info" data-bs-toggle="tooltip" data-bs-placement="top" title="'.$description.'">
               <i class="far fa-sticky-note"></i>
               </button>
               </td>
