@@ -12,15 +12,9 @@
 
 <body onload="Notification()">
 <?php include './assets/include/header.php'; ?>
+<?php include './assets/include/check.php'; ?>
+<?php include './assets/include/check-invalid-user.php'; ?>
   <main>
-<?php
-if (isset($_SESSION['proRG'])) {}
-else {
-  $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
-  header("location: ./");
-}
-?>
-  <?php include './assets/include/check.php'; ?>
       <div class="container rounded bg-white">
         <div class="row">
           <p class="text-center p-3 mb-2 mt-2 left-50 bg-secondary text-light rounded">

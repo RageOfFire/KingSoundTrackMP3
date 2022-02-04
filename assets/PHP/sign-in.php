@@ -6,6 +6,7 @@ OR email='".$_POST['proRG']."') AND password='".mysqli_real_escape_string($conn,
 $get_singin = $conn->query($get_profile) or die($conn->error);
 $row = $get_singin->fetch_array();
     if (is_array($row)) {
+        $_SESSION['success'] = "Đăng nhập thành công";
         $_SESSION['proRG'] = $row['account'];
         header('location:../../');
     }

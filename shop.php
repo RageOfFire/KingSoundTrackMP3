@@ -11,16 +11,10 @@
 </head>
 <body onload="Notification()">
 <?php include './assets/include/header.php'; ?>
-<?php
-if (isset($_SESSION['proRG'])) {}
-else {
-  $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
-  header("location: ./");
-}
-?>
+<?php include './assets/include/check.php'; ?>
+<?php include './assets/include/check-invalid-user.php'; ?>
     <!-- Phần thân -->
     <main>
-    <?php include './assets/include/check.php'; ?>
     <div id="background" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#background" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>

@@ -12,15 +12,9 @@
 
 <body onload="Notification()">
 <?php include './assets/include/header.php'; ?>
+<?php include './assets/include/check.php'; ?>
+<?php include './assets/include/check-invalid-user.php'; ?>
   <main>
-  <?php
-if (isset($_SESSION['proRG'])) {}
-else {
-  $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
-  header("location: ./");
-}
-?>
-  <?php include './assets/include/check.php'; ?>
     <h1 class="text-center">Lịch sử nạp coin</h1>
     <hr>
     <table class="table table-hover table-bordered text-center">

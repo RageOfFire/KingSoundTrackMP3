@@ -11,15 +11,9 @@
 </head>
 <body onload="Notification()">
 <?php include './assets/include/header.php'; ?>
-<main>
 <?php include './assets/include/check.php'; ?>
-<?php
-if (isset($_SESSION['proRG'])) {}
-else {
-  $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
-  header("location: ./");
-}
-?>
+<?php include './assets/include/check-invalid-user.php'; ?>
+<main>
     <h1 class="text-center">Nhạc của bạn</h1>
     <h2 class="text-center">
       <a href="./uploadmusic.php"><button type="button" class="btn btn-success"><i class="far fa-file"></i> Thêm nhạc <i class="far fa-file"></i></button></a>

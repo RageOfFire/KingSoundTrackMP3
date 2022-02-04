@@ -11,14 +11,9 @@
 </head>
 <body>
 <?php include './assets/include/header.php'; ?>
+<?php include './assets/include/check.php'; ?>
+<?php include './assets/include/check-invalid-user.php'; ?>
   <main>
-  <?php
-if (isset($_SESSION['proRG'])) {}
-else {
-  $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
-  header("location: ./");
-}
-?>
     <hr class="mb-3">
     <form action="./assets/PHP/getcoin.php" method="POST">
     <?php

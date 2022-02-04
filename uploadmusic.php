@@ -11,15 +11,9 @@
 </head>
 <body>
 <?php include './assets/include/header.php'; ?>
-<main>
-<?php
-if (isset($_SESSION['proRG'])) {}
-else {
-  $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
-  header("location: ./");
-}
-?>
 <?php include './assets/include/check.php'; ?>
+<?php include './assets/include/check-invalid-user.php'; ?>
+<main>
     <form action="./assets/PHP/addmusic.php" method="post" enctype="multipart/form-data">
     <div class="container rounded bg-white mt-5 mb-5">
         <div class="row main-edit">
@@ -27,14 +21,14 @@ else {
                 <div>
                 <h4 class="p-3 mb-2 mt-2 bg-info text-light rounded text-center">Chọn file nhạc của bạn</h4>
                     <p id="filename"></p>
-                    <input type="file" class="hidden" id="updateFile" accept=".mp3" name="mp3fileRG" onchange="getnamefile()" required>
+                    <input type="file" class="hidden" id="updateFile" accept=".mp3" name="mp3fileRG" onchange="getnamefile()">
                     <label class="input-group-text" for="updateFile">
-                      <div style="width: 300px; height: 100px;"><i class="fas fa-upload" style="font-size: 80px; margin: 10px;"></i></div>
+                      <div style="width: 300px; height: 100px;" class="beautiful-img" data-bs-toggle="tooltip" data-bs-placement="right" title="Ấn vào đây để thêm file nhạc"><i class="fas fa-upload" style="font-size: 80px; margin: 10px;"></i></div>
                     </label>
                 <h4 class="p-3 mb-2 mt-2 bg-info text-light rounded">Ảnh</h4>
                     <input type="file" class="hidden" id="updateIMG" accept="image/*" name="mp3pictureRG" onchange="getnameimg()">
                     <label class="input-group-text" for="updateIMG">
-                      <img class="beautiful-img img-fluid" id="IMGshow" src="<?php echo './Profile Storage/'.$mp3createby.'/img/'.$mp3pic;?>" onError="this.onerror=null;this.src=`./assets/img/vector60-1116-01.jpg`;" width="280px" height="250px">
+                      <img class="beautiful-img img-fluid" id="IMGshow" src="<?php echo './Profile Storage/'.$mp3createby.'/img/'.$mp3pic;?>" onError="this.onerror=null;this.src=`./assets/img/vector60-1116-01.jpg`;" width="280px" height="250px" data-bs-toggle="tooltip" data-bs-placement="right" title="Ấn vào đây để thêm ảnh">
                     </label>
                   </div>
             </div>

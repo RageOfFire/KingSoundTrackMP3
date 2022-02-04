@@ -12,13 +12,8 @@
 
 <body>
 <?php include './assets/include/header.php'; ?>
-<?php
-if (isset($_SESSION['proRG'])) {}
-else {
-  $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
-  header("location: ./");
-}
-?>
+<?php include './assets/include/check.php'; ?>
+<?php include './assets/include/check-invalid-user.php'; ?>
   <?php
   $get_profile = mysqli_real_escape_string($conn,$_SESSION['proRG']);
   $sql_edit = "SELECT * FROM profile WHERE account = '$get_profile'";
@@ -34,7 +29,6 @@ else {
   }
   ?>
   <main>
-  <?php include './assets/include/check.php'; ?>
     <form action="./assets/PHP/editprofile.php" method="post" enctype="multipart/form-data">
       <div class="container rounded bg-white mt-5 mb-5">
         <div class="row main-edit">
@@ -43,7 +37,7 @@ else {
               <h4 class="p-3 mb-2 mt-2 bg-info text-light rounded text-center">Ảnh đại diện</h4>
               <input type="file" class="hidden" id="updateIMG" accept="image/*" name="pictureRG" onchange="getnameimg()">
               <label class="input-group-text" for="updateIMG">
-                <img class="beautiful-img img-fluid" id="IMGshow" src="./Profile Storage/<?php echo $account; ?>/img/<?php echo $getPIC; ?>" onError="this.onerror=null;this.src='./assets/img/User-Profile-PNG-Clipart.png';" width="280px" height="250px">
+                <img class="beautiful-img img-fluid" id="IMGshow" src="./Profile Storage/<?php echo $account; ?>/img/<?php echo $getPIC; ?>" onError="this.onerror=null;this.src='./assets/img/User-Profile-PNG-Clipart.png';" width="280px" height="250px" data-bs-toggle="tooltip" data-bs-placement="right" title="Ấn vào đây để thêm ảnh">
               </label>
             </div>
             <hr>
@@ -63,13 +57,13 @@ else {
                 <?php
                 if (isset($phone)) {
                   echo '
-                  <input type="number" class="form-control" value="'.$phone.'" readonly>
-                  <input type="number" class="form-control" name="phoneRG" placeholder="Số điện thoại">
+                  <input type="tel" class="form-control" value="'.$phone.'" readonly>
+                  <input type="tel" class="form-control" name="phoneRG" placeholder="Số điện thoại">
                   ';
                 }
                 else {
                   echo '
-                  <input type="number" class="form-control" name="phoneRG" placeholder="Số điện thoại">
+                  <input type="tel" class="form-control" name="phoneRG" placeholder="Số điện thoại">
                   ';
                 }
                 ?>

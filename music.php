@@ -11,8 +11,9 @@
 </head>
 <body onload="Notification()">
 <?php include './assets/include/header.php'; ?>
-<main>
 <?php include './assets/include/check.php'; ?>
+<?php include './assets/include/check-invalid-user.php'; ?>
+<main>
 <h1 class="text-center">Nhạc</h1>
 <audio class="music-control" id="music">
     <source src="./Profile Storage/<?php echo $_SESSION['mprofile'];?>/music/<?php echo $_SESSION['mfile'];?>" type="audio/mpeg">
@@ -73,7 +74,7 @@
             <?php
             if (isset($_POST['mp3genderRG'])) {
               $gender = $_POST['mp3genderRG'];
-              $sql_musicfromgender = "SELECT * FROM music WHERE gender = '$gender'";
+              $sql_musicfromgender = "SELECT * FROM music WHERE gender = '$gender' AND is_deleted = 0";
               $getmusicfromgender = $conn->query($sql_musicfromgender) or die($conn->error);
               $i = 0;
               while ($row = $getmusicfromgender->fetch_assoc()) {
@@ -103,7 +104,7 @@
               }
             }
             else {
-            $sql_getmusic = "SELECT * FROM music";
+            $sql_getmusic = "SELECT * FROM music WHERE is_deleted = 0";
             $getmusic = $conn->query($sql_getmusic) or die($conn->error);
             $x = 0;
             while ($row = $getmusic->fetch_assoc()) {

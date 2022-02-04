@@ -11,15 +11,8 @@
 </head>
 <body>
 <?php include './assets/include/header.php'; ?>
-<main>
 <?php include './assets/include/check.php'; ?>
-<?php
-if (isset($_SESSION['proRG'])) {}
-else {
-  $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
-  header("location: ./");
-}
-?>
+<main>
     <h1 class="text-center">Nhạc tìm được</h1>
     <h3 class="text-center">Tìm kiếm theo: Tiêu đề, tác giả, người đăng, mô tả</h3>
     <hr>
