@@ -1,20 +1,36 @@
 <?php
     if (isset($_SESSION['success'])) {
     echo '
-    <div class="alert alert-success mt-3" role="alert">
-    '.$_SESSION['success'].'
-    </div>
+    <script>
+    window.onload = function() {
+    Swal.fire({
+        icon: `success`,
+        title: `'.$_SESSION['success'].'`,
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true
+      })
+    }
+    </script>
     ';
-    unset($_SESSION['success']);
     }
     else {}
+unset($_SESSION['success']);
     if (isset($_SESSION['error'])) {
     echo '
-    <div class="alert alert-danger mt-3" role="alert">
-    '.$_SESSION['error'].'
-    </div>
+    <script>
+    window.onload = function() {
+    Swal.fire({
+        icon: `error`,
+        title: `'.$_SESSION['error'].'`,
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true
+      })
+    }
+    </script>
     ';
-    unset($_SESSION['error']);
     }
     else {}
+unset($_SESSION['error']);
 ?>
