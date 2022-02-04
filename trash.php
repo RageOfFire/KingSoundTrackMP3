@@ -11,15 +11,9 @@
 </head>
 <body onload="Notification()">
 <?php include './assets/include/header.php'; ?>
-<main>
 <?php include './assets/include/check.php'; ?>
-<?php
-if (isset($_SESSION['proRG'])) {}
-else {
-  $_SESSION['error'] = "Phát hiện phiên đăng nhập không hợp lệ";
-  header("location: ./");
-}
-?>
+<?php include './assets/include/check-invalid-user.php'; ?>
+<main>
     <h1 class="text-center">Thùng rác của bạn</h1>
     <h2><a href="./uploadmain.php"><button type="button" class="btn btn-primary"><i class="fas fa-arrow-circle-left"></i> Quay lại</button></a></h2>
     <table class="table table-hover table-bordered text-center">
@@ -58,7 +52,11 @@ else {
               <td class="bg-success">'.$row['author'].'</td>
               <td class="bg-success">'.$row['delete_at'].'</td>
               <td class="bg-dark"><a href="./assets/PHP/restore-music.php?title='.$row['title'].'"><button class="btn btn-success"><i class="fas fa-sync"></i></button></a></td>
-              <td class="bg-dark"><a onClick="javascript: return confirm(`Xác nhận xóa bài hát '.$row['title'].' ?\nHành động này không thể hoàn tác.`);" href="./assets/PHP/deletemusic.php?account='.$profile.'&title='.$row['title'].'"><button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button></a></td>
+              <td class="bg-dark">
+              <a onclick="confirm(event)" 
+              href="./assets/PHP/deletemusic.php?account='.$profile.'&title='.$row['title'].'">
+              <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+              </a></td>
               </tr>
               ';
             }
@@ -118,6 +116,7 @@ else {
   toast.show()
   }
 </script>
+<script src="./assets/javascript/confirm.js"></script>
 <!-- Thông báo khi vào trang -->
 </body>
 </html>
