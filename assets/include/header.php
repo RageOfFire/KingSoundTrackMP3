@@ -11,7 +11,7 @@
                     echo '<a href="./uploadmain.php" class="nav-link px-2 text-white">Đăng</a>';
                 }
                 else {
-                    echo '<a onClick="alert(`Bạn cần đăng nhập để vào trang này`)" href="javascript:void(0)" class="nav-link px-2 text-white">Đăng</a>';
+                    echo '<a onClick="LoginRequired()" href="javascript:void(0)" class="nav-link px-2 text-white">Đăng</a>';
                 }
                 ?>
                 </li>
@@ -21,7 +21,7 @@
                     echo '<a href="./shop.php" class="nav-link px-2 text-white">Cửa hàng</a>';
                 }
                 else {
-                    echo '<a onClick="alert(`Bạn cần đăng nhập để vào trang này`)" href="javascript:void(0)" class="nav-link px-2 text-white">Cửa hàng</a>';
+                    echo '<a onClick="LoginRequired()" href="javascript:void(0)" class="nav-link px-2 text-white">Cửa hàng</a>';
                 }
                 ?>
                 </li>

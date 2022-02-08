@@ -219,5 +219,6 @@
   }
 </script>
 <!-- Thông báo khi vào trang -->
+<script src="./assets/javascript/LoginRequired.js"></script>
 </body>
 </html>
