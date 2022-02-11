@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5;url=https://kingsoundtrackmp3.tk/" />
+    <title>Chuyển hướng</title>
+    <meta name="description"
+        content="KingsoundtrackMP3 là 1 trang web cho phép bạn nghe nhạc và chia sẻ những bản nhạc bạn yêu thích cho mọi người">
+    <meta name="og:title" content="KingSoundTrackMP3" />
+    <meta name="og:url" content="https://www.kingsoundtrackmp3.tk" />
+    <meta name="og:image"
+        content="https://raw.githubusercontent.com/RageOfFire/KingSoundTrackMP3/master/assets/img/1546787190_Music-music-1440-900.jpg" />
+    <meta name="og:image:width" content="1280" />
+    <meta name="og:image:height" content="720" />
+    <meta name="og:description"
+        content="KingsoundtrackMP3 là 1 trang web cho phép bạn nghe nhạc và chia sẻ những bản nhạc bạn yêu thích cho mọi người" />
+    <meta name="theme-color" content="#ff9933">
+    <link rel="shortcut icon" href="./assets/img/avatars-000606604806-j6ghpm-t500x500.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body onload="Redirect()">
+    <script defer>
+        function Redirect() {
+            let timerInterval
+            Swal.fire({
+                title: 'Chuyển hướng',
+                icon: 'info',
+                html: 'Chuyển hướng sang website chính trong <b></b> giây.',
+                timer: 5000,
+                allowOutsideClick: false,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading()
+                    const b = Swal.getHtmlContainer().querySelector('b')
+                    timerInterval = setInterval(() => {
+                        b.textContent = (Swal.getTimerLeft() / 1000).toFixed(0)
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>
