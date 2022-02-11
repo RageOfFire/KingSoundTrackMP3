@@ -3,3 +3,4 @@ test.php
 test.html
 .gitignore
 game.php
+*.bak
