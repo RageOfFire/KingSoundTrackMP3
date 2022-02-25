@@ -1,0 +1,7 @@
+[
+null,
+{"id":1,"battlerName":"Karl","characterIndex":0,"characterName":"mainActor","classId":1,"equips":[1,1,2,3,4],"faceIndex":0,"faceName":"MainActor","traits":[],"initialLevel":1,"maxLevel":30,"name":"Karl","nickname":"","note":"","profile":""},
+{"id":2,"battlerName":"Sylva","characterIndex":3,"characterName":"mainActor","classId":2,"equips":[2,1,2,3,4],"faceIndex":3,"faceName":"MainActor","traits":[],"initialLevel":1,"maxLevel":30,"name":"Sylva","nickname":"","note":"","profile":""},
+{"id":3,"battlerName":"Moore","characterIndex":1,"characterName":"mainActor","classId":4,"equips":[4,1,2,3,4],"faceIndex":1,"faceName":"MainActor","traits":[],"initialLevel":1,"maxLevel":30,"name":"Moore","nickname":"","note":"","profile":""},
+{"id":4,"battlerName":"Eri","characterIndex":2,"characterName":"mainActor","classId":3,"equips":[3,1,2,3,4],"faceIndex":2,"faceName":"MainActor","traits":[],"initialLevel":1,"maxLevel":30,"name":"Eri","nickname":"","note":"","profile":""}
+]

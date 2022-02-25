@@ -13,7 +13,7 @@
   Swal.fire({
       icon: 'question',
       title: '404 not found',
-      text: 'Không tìm thấy trang ! Chuyển hướng về trang chủ',
+      html: 'Không tìm thấy trang ! Chuyển hướng về trang chủ hoặc ấn <a href="./">đây</a> để chuyển hướng luôn',
       showConfirmButton: false,
       backdrop: 'gray',
       timer: 2000,
@@ -21,5 +21,6 @@
     }).then(function() {location.href= "./";})
   }
   </script>
+  
 </body>
 </html>

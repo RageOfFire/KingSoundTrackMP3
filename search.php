@@ -107,5 +107,7 @@
       <?php include "./assets/include/music-kit.php"; ?>
     </main>
     <?php include './assets/include/footer.php'; ?>
+    <?php include './assets/include/loginform.php' ?>
+    <script src="./assets/javascript/LoginRequired.js"></script>
 </body>
 </html>

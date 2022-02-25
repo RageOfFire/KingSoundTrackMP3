@@ -18,13 +18,14 @@
                 <li>
                 <?php
                 if(isset($_SESSION['proRG'])) {
-                    echo '<a href="./shop.php" class="nav-link px-2 text-white">Cửa hàng</a>';
+                    echo '<a href="./game.php" class="nav-link px-2 text-white">Trò chơi</a>';
                 }
                 else {
-                    echo '<a onClick="LoginRequired()" href="javascript:void(0)" class="nav-link px-2 text-white">Cửa hàng</a>';
+                    echo '<a onClick="LoginRequired()" href="javascript:void(0)" class="nav-link px-2 text-white">Trò chơi</a>';
                 }
                 ?>
                 </li>
+                <li><a href="./record.php" class="nav-link px-2 text-white">Kỷ lục</a></li>
                 <li><a href="./about.php" class="nav-link px-2 text-white">Về chúng tôi</a></li>
                 <li>
                 <?php
@@ -54,19 +55,15 @@
                     $profiledata = $conn->query($sql_profiledata) or die($conn->error);
                     while ($row = $profiledata->fetch_assoc()) {
                     $picture = $row['picture'];
-                    $coin = $row['coin'];
-                    $item = $row['item'];
                     }
                     echo '
                     <div class="dropdown">
                     <button class="btn btn-outline-light me-2 dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="'.$item.'"></i>
                     <img src="./Profile Storage/'.$profile.'/img/'.$picture.'" onError="this.onerror=null;this.src=`./assets/img/User-Profile-PNG-Clipart.png`;" height="26px" width="26px">
                     '.$_SESSION['proRG'].'
                     </button>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
                       <li><a class="dropdown-item" href="./editprofilepage.php"><i class="fas fa-user-edit"></i>Chỉnh sửa</a></li>
-                      <li><a class="dropdown-item" href="./coinpage.php"><i class="fas fa-coins"></i>Xu: '.$coin.'</a></li>
                       <li><a class="dropdown-item" href="./history.php"><i class="fas fa-history"></i>Lịch sử</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <li><a class="dropdown-item logout" href="./assets/PHP/sign-off.php"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a></li>

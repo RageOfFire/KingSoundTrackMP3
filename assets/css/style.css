@@ -2,55 +2,71 @@ body {
     background-color: darkmagenta;
     color: white;
 }
+
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
-  }
+}
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
     .bd-placeholder-img-lg {
-      font-size: 3.5rem;
+        font-size: 3.5rem;
     }
-  }
+}
+
 .dropdown:hover .dropdown-menu {
-  display: block;
+    display: block;
 }
+
 .logout {
-  background-color: darkred;
+    background-color: darkred;
 }
+
 .Music-choosen {
-  text-align: center;
-  margin-top: 32px;
-  margin-bottom: 32px;
-  background-color: cyan;
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    background-color: cyan;
 }
+
 .musiclist {
-  overflow: hidden;
+    overflow: hidden;
 }
+
 .music-item {
-  width: 100%;
+    width: 100%;
 }
+
 @media only screen and (min-width: 768px) {
-  .music-item {
-    float: left;
-    width: calc(100%/3);
+    .music-item {
+        float: left;
+        width: calc(100%/3);
+    }
 }
-}
+
 .music-img {
-  opacity: 1;
-  width: 200px;
-  height: 200px;
+    opacity: 1;
+    width: 200px;
+    height: 200px;
 }
+
 .music-img:hover {
-  opacity: 0.3;
-  cursor: pointer;
+    opacity: 0.3;
+    cursor: pointer;
 }
-.rounded-4 { border-radius: .5rem; }
-.rounded-5 { border-radius: .75rem; }
+
+.rounded-4 {
+    border-radius: .5rem;
+}
+
+.rounded-5 {
+    border-radius: .75rem;
+}
+
 a {
-  text-decoration: none;
-  color: purple;
+    text-decoration: none;
+    color: purple;
 }

@@ -1,10 +1,13 @@
 <!-- Tab nghe nhạc -->
+<?php
+ if(isset($_SESSION['mtitle'])) {
+?>
 <audio class="music-control" id="music">
     <source src="./Profile Storage/<?php echo $_SESSION['mprofile'];?>/music/<?php echo $_SESSION['mfile'];?>" type="audio/mpeg">
 </audio>
 <form action="./assets/PHP/music-pack.php" method="post">
 <div class="fixed-bottom">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-dark bg-dark">
   <p class="align-middle text-warning mx-5"><?php if(isset($_SESSION['mtitle'])) {echo "Tên bài hát: ".$_SESSION['mtitle'];} ?></p>
   <p class="align-middle text-warning mx-5"><?php if(isset($_SESSION['mauthor'])) {echo "Tác giả: ".$_SESSION['mauthor'];} ?></p>
   <p class="align-middle text-warning mx-5"><?php if(isset($_SESSION['mgender'])) {echo "Thể loại: ".$_SESSION['mgender'];} ?></p>
@@ -24,6 +27,9 @@
 </nav>
 </div>
 </form>
-
+<?php
+    }
+    else {}
+?>
 <!-- Tab nghe nhạc -->
 <script src="./assets/javascript/musicplayers.js"></script>
