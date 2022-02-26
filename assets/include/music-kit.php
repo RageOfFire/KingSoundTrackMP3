@@ -7,7 +7,7 @@
 </audio>
 <form action="./assets/PHP/music-pack.php" method="post">
 <div class="fixed-bottom">
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-dark bg-dark pt-0 pb-0">
   <p class="align-middle text-warning mx-5"><?php if(isset($_SESSION['mtitle'])) {echo "Tên bài hát: ".$_SESSION['mtitle'];} ?></p>
   <p class="align-middle text-warning mx-5"><?php if(isset($_SESSION['mauthor'])) {echo "Tác giả: ".$_SESSION['mauthor'];} ?></p>
   <p class="align-middle text-warning mx-5"><?php if(isset($_SESSION['mgender'])) {echo "Thể loại: ".$_SESSION['mgender'];} ?></p>
