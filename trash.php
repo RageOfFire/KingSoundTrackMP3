@@ -116,7 +116,7 @@
   toast.show()
   }
 </script>
-<script src="./assets/javascript/confirm.js"></script>
 <!-- Thông báo khi vào trang -->
+<script src="./assets/javascript/confirm.js"></script>
 </body>
 </html>

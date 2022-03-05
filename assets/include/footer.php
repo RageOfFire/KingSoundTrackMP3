@@ -23,6 +23,7 @@ else {
 ?>
 </li>
 <li class="nav-item"><a href="./record.php" class="nav-link px-2 text-warning">Kỷ lục</a></li>
+<li class="nav-item"><a href="./youtube2mp3.php" class="nav-link px-2 text-warning">Youtube2mp3</a></li>
 <li class="nav-item"><a href="./about.php" class="nav-link px-2 text-warning">Về chúng tôi</a></li>
 </ul>
 </footer>

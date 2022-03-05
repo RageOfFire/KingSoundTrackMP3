@@ -26,6 +26,7 @@
                 ?>
                 </li>
                 <li><a href="./record.php" class="nav-link px-2 text-white">Kỷ lục</a></li>
+                <li><a href="./youtube2mp3.php" class="nav-link px-2 text-white">Youtube2mp3</a></li>
                 <li><a href="./about.php" class="nav-link px-2 text-white">Về chúng tôi</a></li>
                 <li>
                 <?php
