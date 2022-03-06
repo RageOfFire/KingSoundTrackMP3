@@ -8,8 +8,8 @@ Website này có những chức năng sau:
 - Chỉnh sửa nhạc
 - Xóa nhạc
 - Quản lý tài khoản,nhạc
-- Cửa hàng
-- Minigame giải đố
+- Mingame
+- chuyển đổi youtube video sang dạng mp3
 - ...
 Hướng dẫn cách sử dụng:
 Tải xampp về và xuất file assets/database/kingsoundtrackmp3.sql vào phpmyadmin
