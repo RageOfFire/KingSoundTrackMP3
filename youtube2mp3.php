@@ -61,6 +61,7 @@
                         timer: 2000,
                         timerProgressBar: true
                     })
+                    $('#mp3-dl').text('');
                 }
             }
         });
@@ -76,7 +77,7 @@
                     if (data.status == "ok") {
                         var dlink = data.link + '&dom=Iframe';
                         $("body").append('<iframe src="' + dlink + '" style="display: none;" ></iframe>');
-                        $("#mp3-dl").html('<a href="' + dlink + '" class="link-success">Tải MP3 - ' + data.title + '</a>');
+                        $("#mp3-dl").html('<a href="' + dlink + '"><button type="button" class="btn btn-success">Không tự động tải xuống ? Nhấn vào đây</button></a>');
                     } else if (data.status == "processing") {
                         if (data.progress) {
                             if (parseInt(data.progress) < 10) {
