@@ -12,16 +12,7 @@ else {
 }
 ?>
 </li>
-<li class="nav-item">
-<?php
-if(isset($_SESSION['proRG'])) {
-  echo '<a href="./game.php" class="nav-link px-2 text-warning">Trò chơi</a>';
-}
-else {
-  echo '<a onClick="LoginRequired()" href="javascript:void(0)" class="nav-link px-2 text-warning">Trò chơi</a>';
-}
-?>
-</li>
+<li class="nav-item"><a href="./game.php" class="nav-link px-2 text-warning">Trò chơi</a></li>
 <li class="nav-item"><a href="./record.php" class="nav-link px-2 text-warning">Kỷ lục</a></li>
 <li class="nav-item"><a href="./youtube2mp3.php" class="nav-link px-2 text-warning">Youtube2mp3</a></li>
 <li class="nav-item"><a href="./about.php" class="nav-link px-2 text-warning">Về chúng tôi</a></li>

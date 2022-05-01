@@ -15,16 +15,7 @@
                 }
                 ?>
                 </li>
-                <li>
-                <?php
-                if(isset($_SESSION['proRG'])) {
-                    echo '<a href="./game.php" class="nav-link px-2 text-white">Trò chơi</a>';
-                }
-                else {
-                    echo '<a onClick="LoginRequired()" href="javascript:void(0)" class="nav-link px-2 text-white">Trò chơi</a>';
-                }
-                ?>
-                </li>
+                <li><a href="./game.php" class="nav-link px-2 text-white">Trò chơi</a></li>
                 <li><a href="./record.php" class="nav-link px-2 text-white">Kỷ lục</a></li>
                 <li><a href="./youtube2mp3.php" class="nav-link px-2 text-white">Youtube2mp3</a></li>
                 <li><a href="./about.php" class="nav-link px-2 text-white">Về chúng tôi</a></li>
