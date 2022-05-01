@@ -14,7 +14,6 @@
 <body onload="Notification()">
     <?php include './assets/include/header.php'; ?>
     <?php include './assets/include/check.php'; ?>
-    <?php include './assets/include/check-invalid-user.php'; ?>
     <main style="background-color: purple;">
         <div class="container rounded bg-dark bg-gradient mt-3 mb-3">
             <div class="ratio ratio-16x9">
@@ -36,7 +35,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
       <div class="toast-body text-white bg-success">
-        Đây là bạn chơi 1 trò chơi nhanh và lưu trữ kỉ lục của bạn vào trang kỷ lục
+        Đây là bạn chơi 1 trò chơi nhỏ và lưu trữ kỉ lục của bạn vào trang kỷ lục nếu bạn đăng nhập
       </div>
       </div>
     </div>
