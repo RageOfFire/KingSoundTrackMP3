@@ -1,7 +1,7 @@
 <?php
 session_start();
 $filestatus=0;
-include_once './assets/include/connect.php';
+include_once '../include/connect.php';
 $profile = mysqli_real_escape_string($conn,$_SESSION['proRG']);
 $mp3title = mysqli_real_escape_string($conn,$_POST['mp3titleRG']);
 $mp3author = mysqli_real_escape_string($conn,$_POST['mp3authorRG']);

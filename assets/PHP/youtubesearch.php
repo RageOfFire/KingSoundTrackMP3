@@ -5,7 +5,7 @@ $query = $_GET['q'];
 $curl = curl_init();
 
 curl_setopt_array($curl, [
-	CURLOPT_URL => "https://youtube-search-and-download.p.rapidapi.com/search?query=".$query."&type=v&sort=v",
+	CURLOPT_URL => "https://youtube-search-and-download.p.rapidapi.com/search?query=".$query,
 	CURLOPT_RETURNTRANSFER => true,
 	CURLOPT_FOLLOWLOCATION => true,
 	CURLOPT_ENCODING => "",
@@ -20,7 +20,6 @@ curl_setopt_array($curl, [
 ]);
 
 $response = curl_exec($curl);
-$err = curl_error($curl);
 
 curl_close($curl);
 
@@ -29,6 +28,6 @@ header("Access-Control-Allow-Methods: GET, POST");
 header("Access-Control-Allow-Headers: X-Requested-With");
 header('Content-Type: application/json');
 
-	echo $response;
+echo $response;
 
 ?>

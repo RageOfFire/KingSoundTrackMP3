@@ -32,6 +32,9 @@
             <p class="fs-3 text-danger">Là nơi cho phép bạn tải xuống video trên youtube dưới dạng mp3</p>
         </div>
         <div id="mp3-dl" class="fs-1 text-success text-center my-5"></div>
+        <div class="container">
+        <div class="row" id="yt-vidlist"></div>
+        </div>
     </div>
     <?php include "./assets/include/music-kit.php"; ?>
     <?php include './assets/include/footer.php'; ?>
@@ -44,27 +47,47 @@
         }
         $(document).on('click', '#convert', function(e) {
             e.preventDefault();
-            $('#mp3-dl').text('Khởi tạo link...');
             var ok = $(this).attr("data-ok");
             var url = document.getElementById("input").value;
             var ytid = ytVidId(url);
             if (ok == '1') {
                 if (ytid) {
+                    $('#mp3-dl').text('Khởi tạo link...');
                     $('#convert').attr("data-ok", "0");
                     mp3Conversion(ytid);
                     $('#convert').attr("data-ok", "1");
                 } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Link không hợp lệ',
-                        showConfirmButton: false,
-                        timer: 2000,
-                        timerProgressBar: true
-                    })
-                    $('#mp3-dl').text('');
+                    searchiyt(url);
                 }
             }
         });
+        var searchYT = "";
+
+        
+        function searchiyt(query) {
+            $.ajax({
+                type: 'GET',
+                url: './assets/PHP/youtubesearch.php',
+                data: {
+                    'q': query
+                },
+                success: function(data, textStatus, request) {
+                    for (var i = 0; i < data.contents.length; i++) {
+                        searchYT += `<div class="col-sm-4 text-break">
+                                <ul class="list-group m-5">
+                                <li class="list-group-item list-group-item-warning"><a href ="./assets/PHP/youtube2mp3backend.php?down=${data.contents[i].video.videoId}"><img src="${data.contents[i].video.thumbnails[0].url}" alt="${data.contents[i].video.title}" width="250" height="250" class="music-img img-fluid"></a></li>
+                                <li class="list-group-item list-group-item-warning">Tiêu đề: ${data.contents[i].video.title}</li>
+                                <li class="list-group-item list-group-item-warning">Thời lượng: ${data.contents[i].video.lengthText}</li>
+                                <li class="list-group-item list-group-item-warning">Thời gian đăng lên: ${data.contents[i].video.publishedTimeText}</li>
+                                <li class="list-group-item list-group-item-warning">Lượt xem: ${data.contents[i].video.viewCountText}</li>
+                                <li class="list-group-item list-group-item-warning"> Mô tả: ${data.contents[i].video.description}</li>
+                                </ul>
+                                </div>`
+                    }
+                    $("#yt-vidlist").html(searchYT);
+                }
+            })
+        }
 
         function mp3Conversion(id) {
             $.ajax({
@@ -110,7 +133,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
             <div class="toast-body text-white bg-success">
-            Là nơi cho phép bạn tải xuống video trên youtube dưới dạng mp3
+                Là nơi cho phép bạn tải xuống video trên youtube dưới dạng mp3
             </div>
         </div>
     </div>

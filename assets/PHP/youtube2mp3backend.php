@@ -1,6 +1,11 @@
 <?php
 
-$id = $_GET['id'];
+if(isset($_GET['id'])) {
+	$id = $_GET['id'];
+}
+if(isset($_GET['down'])) {
+	$id = $_GET['down'];
+}
 
 $curl = curl_init();
 
@@ -15,7 +20,7 @@ curl_setopt_array($curl, [
 	CURLOPT_CUSTOMREQUEST => "GET",
 	CURLOPT_HTTPHEADER => [
 		"x-rapidapi-host: youtube-mp36.p.rapidapi.com",
-		"x-rapidapi-key: YOUR_API_KEY"
+		"x-rapidapi-key: 647595d211msh90dc9f0ed80c9e6p177137jsn6e864fd1b9d4"
 	],
 ]);
 
@@ -28,6 +33,12 @@ header("Access-Control-Allow-Methods: GET, POST");
 header("Access-Control-Allow-Headers: X-Requested-With");
 header('Content-Type: application/json');
 
-echo $response;
-
-?>
+if(isset($_GET['id'])) {
+	echo $response;
+}
+else {
+	$link = json_decode($response);
+	header('location: '.$link->link);
+	sleep(3);
+	header('location: ../../youtube2mp3.php');
+}
