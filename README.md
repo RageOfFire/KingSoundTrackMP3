@@ -10,7 +10,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/RageOfFire/KingSoundTrackMP3)
 ![GitHub followers](https://img.shields.io/github/followers/RageOfFire)
 ![GitHub Repo stars](https://img.shields.io/github/stars/RageOfFire/KingSoundTrackMP3)
-![Website](https://img.shields.io/website?down_color=red&down_message=Offline&up_color=green&up_message=%C4%90ang%20ho%E1%BA%A1t%20%C4%91%E1%BB%99ng&url=https%3A%2F%2Fkingsoundtrackmp3.tk%2F)
+![Website](https://img.shields.io/website?up_message=%C4%90ang%20ho%E1%BA%A1t%20%C4%91%E1%BB%99ng&up_color=green&down_message=Kh%C3%B4ng%20ho%E1%BA%A1t%20%C4%91%E1%BB%99ng&down_color=red&url=https%3A%2F%2Fkingsoundtrackmp3.000webhostapp.com%2F)
 
 ## Các chức năng chính
 
