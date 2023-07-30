@@ -15,7 +15,7 @@ curl_setopt_array($curl, [
 	CURLOPT_CUSTOMREQUEST => "GET",
 	CURLOPT_HTTPHEADER => [
 		"X-RapidAPI-Host: youtube-search-and-download.p.rapidapi.com",
-		"X-RapidAPI-Key: 647595d211msh90dc9f0ed80c9e6p177137jsn6e864fd1b9d4"
+		"X-RapidAPI-Key: your-api-key"
 	],
 ]);
 
