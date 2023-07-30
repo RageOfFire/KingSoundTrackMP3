@@ -1,6 +1,6 @@
 <meta name="description" content="KingsoundtrackMP3 là 1 trang web cho phép bạn nghe nhạc và chia sẻ những bản nhạc bạn yêu thích cho mọi người">
 <meta name="og:title" content="KingSoundTrackMP3" />
-<meta name="og:url" content="https://www.kingsoundtrackmp3.tk" />
+<meta name="og:url" content="https://kingsoundtrackmp3.000webhostapp.com/" />
 <meta name="og:image" content="https://raw.githubusercontent.com/RageOfFire/KingSoundTrackMP3/master/assets/img/1546787190_Music-music-1440-900.jpg" />
 <meta name="og:image:width" content="1280" />
 <meta name="og:image:height" content="720" />
