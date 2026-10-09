@@ -12,6 +12,18 @@
 ![GitHub Repo stars](https://img.shields.io/github/stars/RageOfFire/KingSoundTrackMP3)
 ![Website](https://img.shields.io/website?up_message=%C4%90ang%20ho%E1%BA%A1t%20%C4%91%E1%BB%99ng&up_color=green&down_message=Kh%C3%B4ng%20ho%E1%BA%A1t%20%C4%91%E1%BB%99ng&down_color=red&url=https%3A%2F%2Fkingsoundtrackmp3.000webhostapp.com%2F)
 
+---
+
+### 💼 Work With Me
+
+Enjoying this project or need something custom?
+
+I'm available for freelance work, whether it's **building something new, fixing issues, or improving existing projects**.
+
+[![Hire Me on Fiverr](https://img.shields.io/badge/Hire_Me_on-Fiverr-1DBF73?style=for-the-badge)](https://www.fiverr.com/s/vbby43Z)
+
+---
+
 ## Các chức năng chính
 
 * Đăng ký tài khoản người dùng
